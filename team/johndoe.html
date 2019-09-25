@@ -139,7 +139,7 @@
 <div class="sect2">
 <h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
+<p>Deletes the specified person from the list of people.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -167,12 +167,182 @@ Format: <code>delete INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
+Deletes the 2nd person in the list of people.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>delete 1</code><br>
 Deletes the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-policy-code-deletepolicy-code"><a class="link" href="#deleting-a-policy-code-deletepolicy-code">Deleting a policy : <code>deletepolicy</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified policy from the address book.<br>
+Format: <code>deletepolicy INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the policy at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed policy list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listpolicies</code><br>
+`delete 2<br>
+Deletes the 2nd policy in the list of policies.</p>
+</li>
+<li>
+<p><code>find senior</code><br>
+<code>delete 1</code><br>
+Deletes the 1st policy in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-policies-from-a-person-code-unassignpolicy-code"><a class="link" href="#deleting-policies-from-a-person-code-unassignpolicy-code">Deleting policies from a person : <code>unassignpolicy</code></a></h3>
+<div class="paragraph">
+<p>Removes a policy from the person at the specified index.<br>
+Format: <code>unassignpolicy INDEX pol/POLICY [MORE_POLICIES]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Removes the policies to the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listpeople</code><br>
+<code>unassignpolicy 2 pol/Senior Care</code><br>
+Removes the <code>Senior Care</code> policy from the 2nd person in the list of people.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>unassignpolicy 1 pol/Health Insurance</code><br>
+Removes the <code>Health Insurance</code> policy from the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tags-from-a-person-code-deletetag-code"><a class="link" href="#deleting-tags-from-a-person-code-deletetag-code">Deleting tags from a person : <code>deletetag</code></a></h3>
+<div class="paragraph">
+<p>Deletes a tag from the person at the specified index.<br>
+Format: <code>deletetag INDEX t/TAG [MORE_TAGS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the tags from the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Any number of tags can be deleted.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listpeople</code><br>
+<code>deletetag 2 t/high_priority</code><br>
+Deletes a <code>high_priority</code> tag from the 2nd person in the list of people.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>deletetag 1 t/high_risk</code><br>
+Deletes a <code>high_risk</code> tag from the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-tags-from-a-policy-code-deletepolicytag-code"><a class="link" href="#deleting-tags-from-a-policy-code-deletepolicytag-code">Deleting tags from a policy : <code>deletepolicytag</code></a></h3>
+<div class="paragraph">
+<p>Deletes a tag from the policy at the specified index.<br>
+Format: <code>deletepolicytag INDEX t/TAG [MORE_TAGS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the tags from the policy at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed policies list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Any number of tags can be deleted.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listpolicies</code><br>
+<code>deletepolicytag 2 t/high_priority</code><br>
+Deletes a <code>high_priority</code> tag from the 2nd policy in the list of policies.</p>
+</li>
+<li>
+<p><code>findpolicy Senior</code><br>
+<code>deletepolicytag 1 t/high_risk</code><br>
+Deletes a <code>high_risk</code> tag from the 1st policy in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -428,4 +598,4 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-08 11:38:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-09-25 07:13:30 UTC</div></div></div></body></html>
