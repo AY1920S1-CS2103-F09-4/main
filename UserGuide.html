@@ -161,7 +161,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a person to the list of people<br>
-Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS b/BIRTHDAY [pol/POLICY]&#8230;&#8203; [t/TAG]&#8230;&#8203;​</code></p>
+Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH [pol/POLICY]&#8230;&#8203; [t/TAG]&#8230;&#8203;​</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -195,7 +195,7 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS b/BIRTHDAY [po
 <h3 id="adding-a-policy-code-addpolicy-code"><a class="link" href="#adding-a-policy-code-addpolicy-code">3.3. Adding a policy: <code>addpolicy</code></a></h3>
 <div class="paragraph">
 <p>Adds a policy to the list of policies<br>
-Format: <code>addpolicy n/NAME d/DESCRIPTION c/TIME_PERIOD p/PRICE sa/START_AGE ea/END_AGE [t/TAGS]&#8230;&#8203; [cri/CRITERIA]&#8230;&#8203;</code></p>
+Format: <code>addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] p/PRICE [sa/START_AGE] [ea/END_AGE] [t/TAGS]&#8230;&#8203;[cri/CRITERIA]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -223,7 +223,7 @@ Format: <code>addpolicy n/NAME d/DESCRIPTION c/TIME_PERIOD p/PRICE sa/START_AGE 
 <div class="ulist">
 <ul>
 <li>
-<p><code>addpolicy n/SeniorCare d/Care for seniors c/days/20 months/11 years/5 p/50000 sa/50 ea/75]</code></p>
+<p><code>addpolicy n/SeniorCare d/Care for seniors c/days/20 months/11 years/5 p/50000 sa/50 ea/75</code></p>
 </li>
 </ul>
 </div>
@@ -246,7 +246,7 @@ Format: <code>listpolicies</code></p>
 <h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">3.6. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [b/BIRTHDAY]</code></p>
+Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -285,7 +285,7 @@ Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears the 
 <h3 id="editing-a-policy-code-editpolicy-code"><a class="link" href="#editing-a-policy-code-editpolicy-code">3.7. Editing a policy : <code>editpolicy</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/TIME_PERIOD] [p/PRICE] [sa/START_AGE] [ea/END_AGE] [t/TAG]&#8230;&#8203; [cri/CRITERIA]&#8230;&#8203;</code></p>
+Format: <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]] [p/PRICE] [sa/START_AGE] [ea/END_AGE]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -986,7 +986,7 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe Phone:98765432 Email:johnd@example.com Address:John street, block 123, #01-01 Birthday 12th September 1980 Policy: SeniorCare Tags: high_priority
+<pre class="CodeRay highlight"><code>New person added: John Doe Phone:98765432 Email:johnd@example.com Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
 
 Q9999999J is invalid.
 You might want to contact John Doe: 98765432 johnd@example.com`</code></pre>
@@ -1021,7 +1021,7 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Email:johnd@example.com Address:John street, block 123, #01-01 Birthday 12th September 1980 Policy: SeniorCare Tags: high_priority
+<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Email:johnd@example.com Address:John street, block 123, #01-01 Date of birth:s12th September 1980 Policy: SeniorCare Tags: high_priority
 
 48765432 is invalid.
 You might want to contact John Doe: johnd@example.com</code></pre>
@@ -1056,7 +1056,7 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Birthday 12th September 1980 Policy: SeniorCare Tags: high_priority
+<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
 
 @example.com is invalid. You might want to contact John Doe: 98765432</code></pre>
 </div>
@@ -1092,7 +1092,7 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Birthday 12th September 1980 Policy: SeniorCare Tags: high_priority
+<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
 
 You entered johnd@gmal.com. Did you mean: johnd@gmail.com?</code></pre>
 </div>
@@ -1558,12 +1558,12 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Person</strong> <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS b/BIRTHDAY [pol/POLICY] [t/TAG]…​</code><br>
-e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 b/12.09.1980 pol/SeniorCare t/high-priority</code></p>
+<p><strong>Add Person</strong> <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH  [t/TAG]…​</code><br>
+e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 b/12.09.1980 t/high-priority</code></p>
 </li>
 <li>
-<p><strong>Add Policy</strong> <code>addpolicy  add pol n/NAME d/DESCRIPTION c/TIME_PERIOD p/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203; [t/TAGS]&#8230;&#8203;</code><br>
-e.g. <code>add pol n/SeniorCare d/care for seniors c/10months p/$50000 [sa/50 ea/75]</code></p>
+<p><strong>Add Policy</strong> <code>addpolicy  add pol n/NAME d/DESCRIPTION c/c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]  p/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203; [t/TAGS]&#8230;&#8203;</code><br>
+e.g. <code>add pol n/SeniorCare d/care for seniors c/months/10 p/$50000 [sa/50 ea/75]</code></p>
 </li>
 <li>
 <p><strong>List People</strong> : <code>listpeople</code></p>
@@ -1572,11 +1572,11 @@ e.g. <code>add pol n/SeniorCare d/care for seniors c/10months p/$50000 [sa/50 ea
 <p><strong>List Policies</strong> : <code>listpolicies</code></p>
 </li>
 <li>
-<p><strong>Edit Person</strong> : <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [b/BIRTHDAY]</code><br>
+<p><strong>Edit Person</strong> : <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH]</code><br>
 e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
-<p><strong>Edit Policy</strong> : <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/TIME_PERIOD] [p/PRICE]</code><br>
+<p><strong>Edit Policy</strong> : <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] ] [p/PRICE]</code><br>
 e.g. <code>editpolicy 1 n/Seniors</code></p>
 </li>
 <li>
@@ -1668,4 +1668,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-03 06:13:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-08 13:03:12 UTC</div></div></div></body></html>
