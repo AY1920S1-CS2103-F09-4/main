@@ -556,7 +556,7 @@ Finds all people eligible for the 1st policy in the displayed policy list.</p>
 <h3 id="adding-policies-to-a-person-code-assignpolicy-code"><a class="link" href="#adding-policies-to-a-person-code-assignpolicy-code">3.15. Adding policies to a person : <code>assignpolicy</code></a></h3>
 <div class="paragraph">
 <p>Assigns a policy to the person at the specified index.<br>
-Format: <code>assignpolicy INDEX pol/POLICY [MORE_POLICIES]</code></p>
+Format: <code>assignpolicy perindex/INDEX polindex/INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -591,13 +591,13 @@ Format: <code>assignpolicy INDEX pol/POLICY [MORE_POLICIES]</code></p>
 <ul>
 <li>
 <p><code>listpeople</code><br>
-<code>assignpolicy 2 pol/Senior Care</code><br>
-Assigns the 'Senior Care' policy to the 2nd person in the list of people.</p>
+<code>assignpolicy perindex/2 polindex/2</code><br>
+Assigns the 'Senior Care' (the second policy in the list) policy to the 2nd person in the list of people.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
-<code>assignpolicy 1 pol/Accident Insurance</code><br>
-Assigns the 'Accident Insurance' policy to the 1st person in the results of the <code>find</code> command.</p>
+<code>assignpolicy perindex/1 polindex/1</code><br>
+Assigns the 'Accident Insurance' (the first policy in the list) policy to the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -820,7 +820,7 @@ Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p
 <h3 id="deleting-policies-from-a-person-code-unassignpolicy-code"><a class="link" href="#deleting-policies-from-a-person-code-unassignpolicy-code">3.21. Deleting policies from a person : <code>unassignpolicy</code></a></h3>
 <div class="paragraph">
 <p>Removes a policy from the person at the specified index.<br>
-Format: <code>unassignpolicy INDEX pol/POLICY [MORE_POLICIES]</code></p>
+Format: <code>unassignpolicy perindex/INDEX polindex/INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -852,12 +852,12 @@ Format: <code>unassignpolicy INDEX pol/POLICY [MORE_POLICIES]</code></p>
 <ul>
 <li>
 <p><code>listpeople</code><br>
-<code>unassignpolicy 2 pol/3</code><br>
+<code>unassignpolicy perindex/2 polindex/3</code><br>
 Removes the 3rd policy in the absolute list from the 2nd person in the displayed list of people.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
-<code>unassignpolicy 1 pol/4</code><br>
+<code>unassignpolicy perindex/1 polindex/4</code><br>
 Removes the 4th policy in the absolute list from the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
@@ -1596,8 +1596,8 @@ e.g. <code>findtagpeople smoker diabetic</code></p>
 e.g. <code>findtagpolicy accident life</code></p>
 </li>
 <li>
-<p><strong>Assign Policy</strong> : <code>assignpolicy INDEX pol/POLICY [MORE_POLICIES]</code><br>
-e.g. <code>assignpolicy 2 pol/SeniorCare</code></p>
+<p><strong>Assign Policy</strong> : <code>assignpolicy perindex/INDEX polindex/INDEX</code><br>
+e.g. <code>assignpolicy perindex/2 polindex/2</code></p>
 </li>
 <li>
 <p><strong>Add Tag To Person</strong> : <code>addtag INDEX t/TAG [MORE_TAGS]</code><br>
@@ -1616,8 +1616,8 @@ e.g. <code>delete 3</code></p>
 e.g. <code>deletepolicy 3</code></p>
 </li>
 <li>
-<p><strong>Unassign Policy</strong> : <code>unassignpolicy INDEX pol/POLICY [MORE_POLICIES]</code><br>
-e.g. <code>unassignpolicy 2 pol/SeniorCare</code></p>
+<p><strong>Unassign Policy</strong> : <code>unassignpolicy INDEX polindex/INDEX</code><br>
+e.g. <code>unassignpolicy perindex/2 pol/2</code></p>
 </li>
 <li>
 <p><strong>Delete Tag From Person</strong> : <code>deletetag INDEX t/TAG [MORE_TAGS]</code><br>
@@ -1668,4 +1668,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-12 07:34:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-13 08:21:54 UTC</div></div></div></body></html>
