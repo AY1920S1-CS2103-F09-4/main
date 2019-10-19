@@ -45,16 +45,18 @@
 <li><a href="#incorrect-insurance-policy-assignment-alert">3.30. Incorrect Insurance Policy Assignment Alert</a></li>
 <li><a href="#duplicate-profile-alert">3.31. Duplicate profile alert</a></li>
 <li><a href="#reminders-of-expiring-policies">3.32. Reminders of expiring policies</a></li>
-<li><a href="#generate-report-code-report-code">3.33. Generate Report: <code>report</code></a></li>
-<li><a href="#export-to-excel-code-export-code">3.34. Export to Excel: <code>export</code></a></li>
-<li><a href="#display-indicator-code-display-code">3.35. Display Indicator <code>display</code></a></li>
-<li><a href="#list-recycling-bin-code-bin-code">3.36. List Recycling Bin: <code>bin</code></a></li>
-<li><a href="#restore-recycling-bin-code-restore-code">3.37. Restore Recycling Bin: <code>restore</code></a></li>
-<li><a href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></li>
-<li><a href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.41. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#expanding-a-profile">3.33. Expanding a profile</a></li>
+<li><a href="#expanding-a-policy">3.34. Expanding a policy</a></li>
+<li><a href="#generate-report-code-report-code">3.35. Generate Report: <code>report</code></a></li>
+<li><a href="#export-to-excel-code-export-code">3.36. Export to Excel: <code>export</code></a></li>
+<li><a href="#display-indicator-code-display-code">3.37. Display Indicator <code>display</code></a></li>
+<li><a href="#list-recycling-bin-code-bin-code">3.38. List Recycling Bin: <code>bin</code></a></li>
+<li><a href="#restore-recycling-bin-code-restore-code">3.39. Restore Recycling Bin: <code>restore</code></a></li>
+<li><a href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></li>
+<li><a href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.43. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -1200,7 +1202,39 @@ If <code>no</code>,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generate-report-code-report-code"><a class="link" href="#generate-report-code-report-code">3.33. Generate Report: <code>report</code></a></h3>
+<h3 id="expanding-a-profile"><a class="link" href="#expanding-a-profile">3.33. Expanding a profile</a></h3>
+<div class="paragraph">
+<p>Expands the profile details on the right panel.</p>
+</div>
+<div class="paragraph">
+<p>Format:
+<code>expandperson INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>expandperson 1</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expanding-a-policy"><a class="link" href="#expanding-a-policy">3.34. Expanding a policy</a></h3>
+<div class="paragraph">
+<p>Expands the policy details on the right panel.</p>
+</div>
+<div class="paragraph">
+<p>Format:
+<code>expandpolicy INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>expandpolicy 1</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="generate-report-code-report-code"><a class="link" href="#generate-report-code-report-code">3.35. Generate Report: <code>report</code></a></h3>
 <div class="paragraph">
 <p>Generates report of key performance indicators (KPI). Report is saved in the same directory as the application, or the file path if specified.</p>
 </div>
@@ -1225,7 +1259,7 @@ Saves report in <code>~/reports</code> directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-to-excel-code-export-code"><a class="link" href="#export-to-excel-code-export-code">3.34. Export to Excel: <code>export</code></a></h3>
+<h3 id="export-to-excel-code-export-code"><a class="link" href="#export-to-excel-code-export-code">3.36. Export to Excel: <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports contact details to an excel sheet in the same directory as the application, or the file path if specified.
 Depending on what the user specifies as arguments,
@@ -1259,7 +1293,7 @@ Exports name, phone, and email into <code>~/sheets</code> directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.35. Display Indicator <code>display</code></a></h3>
+<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.37. Display Indicator <code>display</code></a></h3>
 <div class="paragraph">
 <p>Displays indicator according to specified format.</p>
 </div>
@@ -1311,7 +1345,7 @@ Displays policy popularity breakdown as a piechart.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-recycling-bin-code-bin-code"><a class="link" href="#list-recycling-bin-code-bin-code">3.36. List Recycling Bin: <code>bin</code></a></h3>
+<h3 id="list-recycling-bin-code-bin-code"><a class="link" href="#list-recycling-bin-code-bin-code">3.38. List Recycling Bin: <code>bin</code></a></h3>
 <div class="paragraph">
 <p>Shows recently deleted contacts that are stored inside <code>bin</code>.</p>
 </div>
@@ -1349,7 +1383,7 @@ after which it is removed forever.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="restore-recycling-bin-code-restore-code"><a class="link" href="#restore-recycling-bin-code-restore-code">3.37. Restore Recycling Bin: <code>restore</code></a></h3>
+<h3 id="restore-recycling-bin-code-restore-code"><a class="link" href="#restore-recycling-bin-code-restore-code">3.39. Restore Recycling Bin: <code>restore</code></a></h3>
 <div class="paragraph">
 <p>Restores the contact specified by the user.</p>
 </div>
@@ -1386,7 +1420,7 @@ Contact 1</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></h3>
+<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1448,7 +1482,7 @@ Okay! Command has been undone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></h3>
+<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1510,21 +1544,21 @@ Okay! Command has been redone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.41. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.43. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -1616,6 +1650,14 @@ e.g. <code>deletetag 3 t/high_priority</code></p>
 e.g. <code>deletepolicytag 2 t/lifeinsurance</code></p>
 </li>
 <li>
+<p><strong>Expanding a profile</strong> : <code>expandperson INDEX</code><br>
+e.g. <code>expandperson 1</code></p>
+</li>
+<li>
+<p><strong>Expanding a policy</strong> : <code>expandpolicy INDEX</code><br>
+e.g. <code>expandpolicy 1</code></p>
+</li>
+<li>
 <p><strong>Generate Report</strong>: <code>report [f/FILEPATH]</code><br>
 e.g. <code>report f/~/reports/</code></p>
 </li>
@@ -1656,4 +1698,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-18 06:15:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-19 13:22:30 UTC</div></div></div></body></html>
