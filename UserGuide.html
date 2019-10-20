@@ -41,8 +41,8 @@
 <li><a href="#incorrect-nric-alert">3.26. Incorrect NRIC Alert</a></li>
 <li><a href="#incorrect-contact-number-alert">3.27. Incorrect Contact Number Alert</a></li>
 <li><a href="#incorrect-email-address-alert">3.28. Incorrect Email Address Alert</a></li>
-<li><a href="#incorrect-email-address-warning">3.29. Incorrect Email Address Warning</a></li>
-<li><a href="#incorrect-command-suggestions">3.30. Incorrect Command Suggestions</a></li>
+<li><a href="#incorrect-command-suggestions">3.29. Incorrect Command Suggestions</a></li>
+<li><a href="#turning-command-suggestions-on-and-off">3.30. Turning Command Suggestions On and off</a></li>
 <li><a href="#incorrect-insurance-policy-assignment-alert">3.31. Incorrect Insurance Policy Assignment Alert</a></li>
 <li><a href="#duplicate-profile-alert">3.32. Duplicate profile alert</a></li>
 <li><a href="#reminders-of-expiring-policies">3.33. Reminders of expiring policies</a></li>
@@ -962,17 +962,6 @@ Format: <code>clear</code></p>
 <p>Returns an error message to inform the user of an invalid NRIC. The contact number and/or email address is returned
 if present.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>All details except the NRIC will be added.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -996,17 +985,6 @@ You might want to contact John Doe: 98765432 johnd@example.com`</code></pre>
 <div class="paragraph">
 <p>Returns an error message to inform the user of an invalid contact number. The email address is returned
 if present.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>All details except the phone number will be added.</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1032,17 +1010,6 @@ You might want to contact John Doe: johnd@example.com</code></pre>
 <p>Returns an error message to inform the user of an invalid email address. The phone number is returned
 if present.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>All details except the email address will be added.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -1061,46 +1028,7 @@ if present.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="incorrect-email-address-warning"><a class="link" href="#incorrect-email-address-warning">3.29. Incorrect Email Address Warning</a></h3>
-<div class="paragraph">
-<p>Returns a warning message to inform the user of a potential typo in email address.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>All details except the email address will be added.</p>
-</li>
-<li>
-<p>These warnings can be turned off.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p><code>add n/John Doe ic/Q9999999J p/48765432 e/johnd@gmal.com a/John street, block 123, #01-01 dob/12.09.1980</code><br></p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
-
-You entered johnd@gmal.com. Did you mean: johnd@gmail.com?</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>User can input <code>yes</code> or <code>no</code> to use the original input email or the suggested email respectively.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="incorrect-command-suggestions"><a class="link" href="#incorrect-command-suggestions">3.30. Incorrect Command Suggestions</a></h3>
+<h3 id="incorrect-command-suggestions"><a class="link" href="#incorrect-command-suggestions">3.29. Incorrect Command Suggestions</a></h3>
 <div class="paragraph">
 <p>Returns an error message and a suggestion of a correct command when a command is typed incorrectly.</p>
 </div>
@@ -1119,15 +1047,30 @@ You entered johnd@gmal.com. Did you mean: johnd@gmail.com?</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>User can input <code>yes</code> or <code>no</code>.</p>
+<p>The input will automatically be updated to the suggested command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="turning-command-suggestions-on-and-off"><a class="link" href="#turning-command-suggestions-on-and-off">3.30. Turning Command Suggestions On and off</a></h3>
+<div class="paragraph">
+<p>Switches suggestions for invalid commands on or off.</p>
 </div>
 <div class="paragraph">
-<p>If <code>yes</code>, the command will be executed.
-If <code>no</code>,</p>
+<p>Format:
+<code>suggestion [ON/] [OFF/]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>suggestion ON/</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Please key in your command again. For more information  of the available commands, type help.</code></pre>
+<pre class="CodeRay highlight"><code>Suggestions have been switched on.</code></pre>
 </div>
 </div>
 </div>
@@ -1709,4 +1652,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-20 08:30:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-20 10:14:26 UTC</div></div></div></body></html>
