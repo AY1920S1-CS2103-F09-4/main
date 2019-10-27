@@ -45,19 +45,18 @@
 <li><a href="#turning-command-suggestions-on-and-off">3.30. Turning Command Suggestions On and off</a></li>
 <li><a href="#incorrect-insurance-policy-assignment-alert">3.31. Incorrect Insurance Policy Assignment Alert</a></li>
 <li><a href="#duplicate-profile-alert">3.32. Duplicate profile alert</a></li>
-<li><a href="#reminders-of-expiring-policies">3.33. Reminders of expiring policies</a></li>
-<li><a href="#expanding-a-profile">3.34. Expanding a profile</a></li>
-<li><a href="#expanding-a-policy">3.35. Expanding a policy</a></li>
-<li><a href="#generate-report-code-report-code">3.36. Generate Report: <code>report</code></a></li>
-<li><a href="#export-to-excel-code-export-code">3.37. Export to Excel: <code>export</code></a></li>
-<li><a href="#display-indicator-code-display-code">3.38. Display Indicator <code>display</code></a></li>
-<li><a href="#list-recycling-bin-code-bin-code">3.39. List Recycling Bin: <code>bin</code></a></li>
-<li><a href="#restore-recycling-bin-code-restore-code">3.40. Restore Recycling Bin: <code>restore</code></a></li>
-<li><a href="#undo-recently-entered-commands">3.41. Undo recently entered commands</a></li>
-<li><a href="#redo-recently-undone-commands">3.42. Redo recently undone commands</a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.43. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.44. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.45. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#expanding-a-profile">3.33. Expanding a profile</a></li>
+<li><a href="#expanding-a-policy">3.34. Expanding a policy</a></li>
+<li><a href="#generate-report-code-report-code">3.35. Generate Report: <code>report</code></a></li>
+<li><a href="#export-to-excel-code-export-code">3.36. Export to Excel: <code>export</code></a></li>
+<li><a href="#display-indicator-code-display-code">3.37. Display Indicator <code>display</code></a></li>
+<li><a href="#list-recycling-bin-code-bin-code">3.38. List Recycling Bin: <code>bin</code></a></li>
+<li><a href="#restore-recycling-bin-code-restore-code">3.39. Restore Recycling Bin: <code>restore</code></a></li>
+<li><a href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></li>
+<li><a href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.43. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -973,10 +972,11 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe Phone:98765432 Email:johnd@example.com Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
-
-Q9999999J is invalid.
-You might want to contact John Doe: 98765432 johnd@example.com`</code></pre>
+<pre class="CodeRay highlight"><code>This is not a valid Singapore Identification number.
+NRICs should only contain alphanumeric characters. It should start with S, T, F or G followed by 7 numerical numbers and a checksum letter.
+You might want to contact John Doe
+PHONE: 98765432
+EMAIL: johnd@example.com`</code></pre>
 </div>
 </div>
 </div>
@@ -997,10 +997,9 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Email:johnd@example.com Address:John street, block 123, #01-01 Date of birth:s12th September 1980 Policy: SeniorCare Tags: high_priority
-
-48765432 is invalid.
-You might want to contact John Doe: johnd@example.com</code></pre>
+<pre class="CodeRay highlight"><code>Only Singapore phone numbers are allowed. (e.g. 88887541, +65 98753573, +6565241234
+You might want to contact John Doe
+EMAIL: johnd@example.com</code></pre>
 </div>
 </div>
 </div>
@@ -1021,9 +1020,14 @@ if present.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S9999999J Phone: 98765432 Address:John street, block 123, #01-01 Date of birth: 12th September 1980 Policy: SeniorCare Tags: high_priority
-
-@example.com is invalid. You might want to contact John Doe: 98765432</code></pre>
+<pre class="CodeRay highlight"><code>Emails should be of the format local-part@domain and adhere to the following constraints:
+1. The local-part should only contain alphanumeric characters and these special characters, excluding the parentheses, (!#$%&amp;'*+/=?`{|}~^.-) .
+2. This is followed by a '@' and then a domain name. The domain name must:
+    - be at least 2 characters long
+    - start and end with alphanumeric characters
+    - consist of alphanumeric characters, a period or a hyphen for the characters in between, if any.
+You might want to contact John Doe
+PHONE: 98765432</code></pre>
 </div>
 </div>
 </div>
@@ -1147,13 +1151,7 @@ If <code>no</code>,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reminders-of-expiring-policies"><a class="link" href="#reminders-of-expiring-policies">3.33. Reminders of expiring policies</a></h3>
-<div class="paragraph">
-<p>Displays a list of people whose policies are expiring in the current month on the start up page. This list will be updated every month.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="expanding-a-profile"><a class="link" href="#expanding-a-profile">3.34. Expanding a profile</a></h3>
+<h3 id="expanding-a-profile"><a class="link" href="#expanding-a-profile">3.33. Expanding a profile</a></h3>
 <div class="paragraph">
 <p>Expands the profile details on the right panel.</p>
 </div>
@@ -1169,7 +1167,7 @@ If <code>no</code>,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expanding-a-policy"><a class="link" href="#expanding-a-policy">3.35. Expanding a policy</a></h3>
+<h3 id="expanding-a-policy"><a class="link" href="#expanding-a-policy">3.34. Expanding a policy</a></h3>
 <div class="paragraph">
 <p>Expands the policy details on the right panel.</p>
 </div>
@@ -1185,7 +1183,7 @@ If <code>no</code>,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generate-report-code-report-code"><a class="link" href="#generate-report-code-report-code">3.36. Generate Report: <code>report</code></a></h3>
+<h3 id="generate-report-code-report-code"><a class="link" href="#generate-report-code-report-code">3.35. Generate Report: <code>report</code></a></h3>
 <div class="paragraph">
 <p>Generates report of key performance indicators (KPI). Report is saved in the same directory as the application, or the file path if specified.</p>
 </div>
@@ -1210,7 +1208,7 @@ Saves report in <code>~/reports</code> directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-to-excel-code-export-code"><a class="link" href="#export-to-excel-code-export-code">3.37. Export to Excel: <code>export</code></a></h3>
+<h3 id="export-to-excel-code-export-code"><a class="link" href="#export-to-excel-code-export-code">3.36. Export to Excel: <code>export</code></a></h3>
 <div class="paragraph">
 <p>Exports contact details to an excel sheet in the same directory as the application, or the file path if specified.
 Depending on what the user specifies as arguments,
@@ -1244,7 +1242,7 @@ Exports name, phone, and email into <code>~/sheets</code> directory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.38. Display Indicator <code>display</code></a></h3>
+<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.37. Display Indicator <code>display</code></a></h3>
 <div class="paragraph">
 <p>Displays indicator according to specified format.</p>
 </div>
@@ -1296,7 +1294,7 @@ Displays policy popularity breakdown as a piechart.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-recycling-bin-code-bin-code"><a class="link" href="#list-recycling-bin-code-bin-code">3.39. List Recycling Bin: <code>bin</code></a></h3>
+<h3 id="list-recycling-bin-code-bin-code"><a class="link" href="#list-recycling-bin-code-bin-code">3.38. List Recycling Bin: <code>bin</code></a></h3>
 <div class="paragraph">
 <p>Shows recently deleted contacts that are stored inside <code>bin</code>.</p>
 </div>
@@ -1334,7 +1332,7 @@ after which it is removed forever.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="restore-recycling-bin-code-restore-code"><a class="link" href="#restore-recycling-bin-code-restore-code">3.40. Restore Recycling Bin: <code>restore</code></a></h3>
+<h3 id="restore-recycling-bin-code-restore-code"><a class="link" href="#restore-recycling-bin-code-restore-code">3.39. Restore Recycling Bin: <code>restore</code></a></h3>
 <div class="paragraph">
 <p>Restores the contact specified by the user.</p>
 </div>
@@ -1371,7 +1369,7 @@ Contact 1</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.41. Undo recently entered commands</a></h3>
+<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1433,7 +1431,7 @@ Okay! Command has been undone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.42. Redo recently undone commands</a></h3>
+<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1495,21 +1493,21 @@ Okay! Command has been redone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.43. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.44. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.43. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.45. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -1652,4 +1650,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-27 16:48:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-27 17:04:10 UTC</div></div></div></body></html>
