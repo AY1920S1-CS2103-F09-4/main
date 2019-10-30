@@ -48,15 +48,13 @@
 <li><a href="#duplicate-profile-alert">3.33. Duplicate profile alert</a></li>
 <li><a href="#expanding-a-profile">3.34. Expanding a profile</a></li>
 <li><a href="#expanding-a-policy">3.35. Expanding a policy</a></li>
-<li><a href="#generate-report-code-report-code">3.36. Generate Report: <code>report</code></a></li>
-<li><a href="#export-to-excel-code-export-code">3.37. Export to Excel: <code>export</code></a></li>
-<li><a href="#display-indicator-code-display-code">3.38. Display Indicator <code>display</code></a></li>
-<li><a href="#restore-deleted-items-code-restore-code">3.39. Restore Deleted Items: <code>restore</code></a></li>
-<li><a href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></li>
-<li><a href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.43. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#display-indicator-code-display-code">3.36. Display Indicator <code>display</code></a></li>
+<li><a href="#restore-deleted-items-code-restore-code">3.37. Restore Deleted Items: <code>restore</code></a></li>
+<li><a href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></li>
+<li><a href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.41. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -1196,72 +1194,13 @@ If <code>no</code>,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="generate-report-code-report-code"><a class="link" href="#generate-report-code-report-code">3.36. Generate Report: <code>report</code></a></h3>
-<div class="paragraph">
-<p>Generates report of key performance indicators (KPI). Report is saved in the same directory as the application, or the file path if specified.</p>
-</div>
-<div class="paragraph">
-<p>Format:
-<code>report [f/FILEPATH]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p><code>report f/~/reports/</code><br>
-Saves report in <code>~/reports</code> directory.</p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="imageblock" style="text-align: left">
-<div class="content">
-<img src="images/Report.png" alt="Report" width="400">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export-to-excel-code-export-code"><a class="link" href="#export-to-excel-code-export-code">3.37. Export to Excel: <code>export</code></a></h3>
-<div class="paragraph">
-<p>Exports contact details to an excel sheet in the same directory as the application, or the file path if specified.
-Depending on what the user specifies as arguments,
-different fields of the contacts can be exported. Arguments can also be chained to export multiple fields together at once.</p>
-</div>
-<div class="paragraph">
-<p>Format:
-<code>export [name] [phone] [email] [address] [insurance] [f/FILEPATH]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>If no arguments are provided, all possible fields are exported.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="paragraph">
-<p><code>export</code><br>
-Exports all possible fields in the address book.</p>
-</div>
-<div class="paragraph">
-<p><code>export name phone email f/~/sheets/</code><br>
-Exports name, phone, and email into <code>~/sheets</code> directory.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.38. Display Indicator <code>display</code></a></h3>
+<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">3.36. Display Indicator <code>display</code></a></h3>
 <div class="paragraph">
 <p>Displays indicator according to specified format.</p>
 </div>
 <div class="paragraph">
 <p>Format:
-<code>display i/INDICATOR f/CHARTf</code></p>
+<code>display i/INDICATOR f/FORMAT</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1272,16 +1211,29 @@ Exports name, phone, and email into <code>~/sheets</code> directory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Policy Popularity breakdown</p>
+<p><code>policy-popularity-breakdown</code></p>
 </li>
 <li>
-<p>Age Group breakdown</p>
+<p><code>age-group-breakdown</code></p>
 </li>
 <li>
-<p>Gender breakdown</p>
+<p><code>gender-breakdown</code></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Contact List growth rate</p>
+<p>Formats include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>piechart</code></p>
+</li>
+<li>
+<p><code>barchart</code></p>
+</li>
+<li>
+<p><code>linechart</code></p>
 </li>
 </ul>
 </div>
@@ -1307,7 +1259,7 @@ Displays policy popularity breakdown as a piechart.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="restore-deleted-items-code-restore-code"><a class="link" href="#restore-deleted-items-code-restore-code">3.39. Restore Deleted Items: <code>restore</code></a></h3>
+<h3 id="restore-deleted-items-code-restore-code"><a class="link" href="#restore-deleted-items-code-restore-code">3.37. Restore Deleted Items: <code>restore</code></a></h3>
 <div class="paragraph">
 <p>Restores an item (person or policy) in the bin specified by the user.</p>
 </div>
@@ -1355,7 +1307,7 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.40. Undo recently entered commands</a></h3>
+<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1417,7 +1369,7 @@ Okay! Command has been undone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.41. Redo recently undone commands</a></h3>
+<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></h3>
 <div class="paragraph">
 <p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
 </div>
@@ -1479,21 +1431,21 @@ Okay! Command has been redone.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.42. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.43. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.41. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.44. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -1603,14 +1555,6 @@ e.g. <code>expandperson 1</code></p>
 e.g. <code>expandpolicy 1</code></p>
 </li>
 <li>
-<p><strong>Generate Report</strong>: <code>report [f/FILEPATH]</code><br>
-e.g. <code>report f/~/reports/</code></p>
-</li>
-<li>
-<p><strong>Export to Excel</strong>: <code>export [name] [phone] [email] [address] [insurance] [f/FILEPATH]</code><br>
-e.g. <code>export name phone email f/~/sheets/</code></p>
-</li>
-<li>
 <p><strong>Display</strong>: <code>display i/INDICATOR f/FORMAT</code><br>
 e.g. <code>display i/policy-popularity-breakdown f/piechart</code></p>
 </li>
@@ -1643,4 +1587,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-29 15:18:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 06:29:52 UTC</div></div></div></body></html>
