@@ -225,6 +225,56 @@ Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p
 </div>
 </div>
 <div class="sect2">
+<h3 id="adding-policies-to-a-person-code-assignpolicy-code"><a class="link" href="#adding-policies-to-a-person-code-assignpolicy-code">Adding policies to a person : <code>assignpolicy</code></a></h3>
+<div class="paragraph">
+<p>Assigns a policy to the person at the specified index.<br>
+Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Adds the policies to the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The policy refers to the name of the policy.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Each policy name must match the policy exactly as it appears in the absolute policy list.</p>
+</li>
+<li>
+<p>Any number of policies can be added as long as the person is eligible for the policy.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listpeople</code><br>
+<code>assignpolicy perindex/2 polindex/2</code><br>
+Assigns the 'Senior Care' (the second policy in the list) policy to the 2nd person in the list of people.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>assignpolicy 1 pol/Accident Insurance</code><br>
+Assigns the 'Accident Insurance' (the first policy in the list) policy to the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="deleting-policies-from-a-person-code-unassignpolicy-code"><a class="link" href="#deleting-policies-from-a-person-code-unassignpolicy-code">Deleting policies from a person : <code>unassignpolicy</code></a></h3>
 <div class="paragraph">
 <p>Removes a policy from the person at the specified index.<br>
@@ -274,7 +324,7 @@ Removes the policy 'Health Insurance' in the absolute list from the 1st person i
 <div class="sect2">
 <h3 id="deleting-tags-from-a-person-code-deletetag-code"><a class="link" href="#deleting-tags-from-a-person-code-deletetag-code">Deleting tags from a person : <code>deletetag</code></a></h3>
 <div class="paragraph">
-<p>Deletes a tag from the person at the specified index.<br>
+<p>Deletes tag(s) from the person at the specified index.<br>
 Format: <code>deletetag INDEX t/TAG [MORE_TAGS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -318,7 +368,7 @@ Deletes a <code>high_risk</code> tag from the 1st person in the results of the <
 <div class="sect2">
 <h3 id="deleting-tags-from-a-policy-code-deletepolicytag-code"><a class="link" href="#deleting-tags-from-a-policy-code-deletepolicytag-code">Deleting tags from a policy : <code>deletepolicytag</code></a></h3>
 <div class="paragraph">
-<p>Deletes a tag from the policy at the specified index.<br>
+<p>Deletes tag(s) from the policy at the specified index.<br>
 Format: <code>deletepolicytag INDEX t/TAG [MORE_TAGS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -582,4 +632,4 @@ Violates Single Responsibility Principle and Separation of Concerns as HistoryMa
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-30 14:13:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 12:04:40 UTC</div></div></div></body></html>
