@@ -640,7 +640,7 @@ to the instantiation of a controller.)</p>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The bin feature is facilitated by <code>BinItem</code>, <code>UniqueBinItemList</code> classes and the interface`Binnable`. Objects that
+<p>The bin feature is facilitated by <code>BinItem</code>, <code>UniqueBinItemList</code> classes and the interface <code>Binnable</code>. Objects that
 can be "binned" will implement the interface  <code>Binnable</code>. When a <code>Binnable</code> object is deleted, it is wrapped in a
 wrapper class <code>BinItem</code> and is moved into <code>UniqueBinItemList</code>.</p>
 </div>
@@ -661,7 +661,7 @@ auto-deletion mechanism of objects in the bin.</p>
 <p>Given below is an example usage scenario and how the bin mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. When the user launches <strong>Insurelytics</strong>, <code>AddressBook</code> will run <code>Addressbook#cleanUp()</code>, which will check the
+<p>Step 1. When the user launches <strong>Insurelytics</strong>, <code>ModelManager</code> will run <code>ModelManager#binCleanUp()</code>, which will check the
 <code>expiryDate</code> of all objects in <code>UniqueBinItemList</code> against the system clock. If the system clock exceeds <code>expiryDate</code>,
 <code>UniqueBinItemList#remove()</code> is called and deletes the expired object forever.</p>
 </div>
@@ -1975,4 +1975,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 14:38:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 15:13:16 UTC</div></div></div></body></html>
