@@ -88,7 +88,7 @@ Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#82
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/AY1920S1-CS2103-F09-4/main/releases">here</a>.</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="{https://github.com/AY1920S1-CS2103-F09-4/main/releases}/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -110,13 +110,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>listpeople</code></strong> : lists all people</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/Male</code>: adds person</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd person shown in the current list</p>
+</li>
+<li>
+<p><strong><code>listpolicy</code></strong> : lists all policies</p>
+</li>
+<li>
+<p><code>add pol n/SeniorCare d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code>: adds policy</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -167,14 +173,27 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a person to the list of people<br>
-Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH</code></p>
+Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH g/GENDER</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Birthdays are in the form <code>DD.MM.YYYY</code>.</p>
+<p><code>DATE_OF_BIRTH</code> are in the form <code>DD.MM.YYYY</code>.</p>
+</li>
+<li>
+<p><code>NAME</code> can take any values and should not be blank.</p>
+</li>
+<li>
+<p><code>ADDRESS</code> can take any values and should not be blank.</p>
+</li>
+<li>
+<p><code>GENDER</code> must either be <code>Male</code> or <code>Female</code>.</p>
+</li>
+<li>
+<p>Exact input validations for <code>NRIC</code>, <code>PHONE_NUMBER</code>, <code>EMAIL</code> are specified in sections <a href="#incorrect-nric-alert">Section 3.28, &#8220;Incorrect NRIC Alert&#8221;</a>,
+<a href="#incorrect-contact-number-alert">Section 3.29, &#8220;Incorrect Contact Number Alert&#8221;</a>, and <a href="#incorrect-email-address-alert">Section 3.30, &#8220;Incorrect Email Address Alert&#8221;</a> respectively.</p>
 </li>
 </ul>
 </div>
@@ -186,7 +205,7 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BI
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980</code></p>
+<p><code>add n/John Doe ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.1912 g/Male</code></p>
 </li>
 </ul>
 </div>
@@ -276,6 +295,18 @@ Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To edit tags, use <code>addTag</code> or <code>deleteTag</code>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -285,18 +316,14 @@ Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob
 <p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
 Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
-<li>
-<p><code>edit 2 n/Betsy Crower a/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears the address tag.</p>
-</li>
 </ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="editing-a-policy-code-editpolicy-code"><a class="link" href="#editing-a-policy-code-editpolicy-code">3.9. Editing a policy : <code>editpolicy</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]] [pr/PRICE] [sa/START_AGE] [ea/END_AGE]</code></p>
+<p>Edits an existing policy in the address book.<br>
+Format: <code>editpolicy INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]] [pr/PRICE] [sa/START_AGE] [ea/END_AGE]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -314,6 +341,18 @@ Format: <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MO
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To edit policy tags, use <code>addPolicyTag</code> or <code>deletePolicyTag</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -404,7 +443,7 @@ Format: <code>findpolicy KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find family children</code><br>
+<p><code>findpolicy family children</code><br>
 Returns any policy having names or descriptions containing <code>family</code> or <code>children</code></p>
 </li>
 </ul>
@@ -759,12 +798,23 @@ Format: <code>delete INDEX</code></p>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>Deleted persons are moved into the bin, where they stay there for 30 days before being removed forever (currently
-set to 10 seconds so it can be tested easily, value is set in BinItem class).</p>
+<p>Deleted persons are moved into the bin, where they stay there for 30 days before being removed permanently.</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -803,13 +853,21 @@ Format: <code>deletepolicy INDEX</code></p>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
-<li>
-<p>Deleted policies are moved into the bin, where they stay there for 30 days before being removed forever (currently
-set to 10 seconds so it can be tested easily, value is set in BinItem class).</p>
-</li>
 </ul>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -1031,7 +1089,7 @@ if present.</p>
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/Q9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 pol/1 t/high-priority</code><br></p>
+<p><code>add n/John Doe ic/Q9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/Male</code><br></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1056,7 +1114,7 @@ if present.</p>
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/S9999999J p/48765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 pol/1 t/high-priority</code><br></p>
+<p><code>add n/John Doe ic/S9999999J p/48765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/Male</code><br></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1079,7 +1137,7 @@ if present.</p>
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/S9999999J p/98765432 e/@example.com a/John street, block 123, #01-01 dob/12.09.1980</code><br></p>
+<p><code>add n/John Doe ic/S9999999J p/98765432 e/@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/Male</code><br></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1186,7 +1244,7 @@ For each different attribute, there will be a prompt to suggest a change from th
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/S9999999J p/91234567 e/johndoe@example.com a/John street, block 123, #01-01 age/30</code></p>
+<p><code>add n/John Doe ic/S9999999J p/91234567 e/johndoe@example.com a/John street, block 123, #01-01 age/30 g/Male</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1522,8 +1580,8 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Person</strong> <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH​</code><br>
-e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980</code></p>
+<p><strong>Add Person</strong> <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH​ g/GENDER</code><br>
+e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/MALE</code></p>
 </li>
 <li>
 <p><strong>Add Policy</strong> <code>addpolicy  addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]  pr/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203;</code><br>
@@ -1642,4 +1700,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-31 15:47:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:24:36 UTC</div></div></div></body></html>
