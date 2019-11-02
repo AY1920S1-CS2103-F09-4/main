@@ -926,7 +926,7 @@ Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
 <ul>
 <li>
 <p><code>listpeople</code><br>
-<code>assignpolicy perindex/2 polindex/2</code><br>
+<code>assignpolicy 2 pol/Senior Care</code><br>
 Assigns the 'Senior Care' (the second policy in the list) policy to the 2nd person in the list of people.</p>
 </li>
 <li>
@@ -1422,46 +1422,7 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 <div class="sect2">
 <h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.39. Undo recently entered commands</a></h3>
 <div class="paragraph">
-<p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>undo list</code></p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>Here is the list of recently entered commands:
-1. Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-2. Delete Person - Name: Jane Doe IC: S9999999J Phone: 123456789 Email: janedoe@example.com
-3. Edit Person - Name: Jonathan Doe IC: S9999999J Phone: 123456789 Email: jonathandoe@example.com</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>undo 3</code></p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>Undoing the following commands:
-1. Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-2. Delete Person - Name: Jane Doe IC: S9999999J Phone: 123456789 Email: janedoe@example.com
-3. Edit Person - Name: Jonathan Doe IC: S9999999J Phone: 123456789 Email: jonathandoe@example.com
-
-Okay! Commands have been undone.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The user can also simply enter the command <code>undo</code> to undo the most recent command.</p>
+<p>User can simply enter the command <code>undo</code> to undo the most recent address book change.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1474,56 +1435,14 @@ Okay! Commands have been undone.</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Undoing the following command:
-Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-
-Okay! Command has been undone.</code></pre>
+<pre class="CodeRay highlight"><code>An undo has been performed!</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.40. Redo recently undone commands</a></h3>
 <div class="paragraph">
-<p>Displaying a list of recently entered commands, and the user can select the range of commands the user wants to undo.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>redo list</code></p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>Here is the list of recently undone commands:
-1. Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-2. Delete Person - Name: Jane Doe IC: S9999999J Phone: 123456789 Email: janedoe@example.com
-3. Edit Person - Name: Jonathan Doe IC: S9999999J Phone: 123456789 Email: jonathandoe@example.com</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>redo 3</code></p>
-</div>
-<div class="paragraph">
-<p>Expected Output:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>Redoing the following commands:
-1. Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-2. Delete Person - Name: Jane Doe IC: S9999999J Phone: 123456789 Email: janedoe@example.com
-3. Edit Person - Name: Jonathan Doe IC: S9999999J Phone: 123456789 Email: jonathandoe@example.com
-
-Okay! Commands have been redone.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The user can also simply enter the command <code>redo</code> to undo the most recent command.</p>
+<p>User can simply enter the command <code>redo</code> to redo the most recent undone address book change.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1536,10 +1455,7 @@ Okay! Commands have been redone.</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Redoing the following command:
-Add Person - Name: John Doe IC: S9999999J Phone: 98765432 Email: johndoe@example.com
-
-Okay! Command has been redone.</code></pre>
+<pre class="CodeRay highlight"><code>A redo has been performed!</code></pre>
 </div>
 </div>
 </div>
@@ -1672,24 +1588,10 @@ e.g. <code>expandpolicy 1</code></p>
 e.g. <code>display i/policy-popularity-breakdown f/piechart</code></p>
 </li>
 <li>
-<p><strong>List of undone commands</strong>: <code>undo list</code></p>
-</li>
-<li>
-<p><strong>Undo till a particular command</strong>: <code>undo INDEX</code><br>
-e.g. <code>undo 3</code></p>
-</li>
-<li>
 <p><strong>Undo the most recent command</strong>: <code>undo</code></p>
 </li>
 <li>
-<p><strong>List of undone commands</strong>: <code>redo list</code></p>
-</li>
-<li>
-<p><strong>Undo till a particular command</strong>: <code>redo INDEX</code><br>
-e.g. <code>redo 3</code></p>
-</li>
-<li>
-<p><strong>Undo the most recent command</strong>: <code>redo</code></p>
+<p><strong>Redo the most recent undone command</strong>: <code>redo</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -1700,4 +1602,4 @@ e.g. <code>redo 3</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 10:24:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-02 15:49:39 UTC</div></div></div></body></html>
