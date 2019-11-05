@@ -1,0 +1,643 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Larry Law - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Insurelytics</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://nus-cs2103-ay1920s1.github.io/insurelytics/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Larry Law - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-insurelytics"><a class="link" href="#project-insurelytics">PROJECT: Insurelytics</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="imageblock">
+<div class="content">
+<img src="../images/InsurelyticsLogo.png" alt="InsurelyticsLogo" width="250">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Insurelytics is a desktop client management application for insurance agents.
+Insurelytics facilitates the tracking of client and policies, and also generate statistical analytics to provide insights for the agent.
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 80 kLoC.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Added the <code>display</code> feature.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong> Displays indicators of the address book in specified format.
+The agent can visualise the age group breakdown, policy popularity breakdown, and gender breakdown of his address book.
+Visualisation comes in the form of bar chart, pie chart, or line chart.</p>
+</li>
+<li>
+<p><strong>Justification:</strong> Analytics of the data in the address book yield insight for the agent. This facilitates data-driven decisions by the agent.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>display</code> mechanism follows the MVC framework. It also uses an OOP solution, which features the use of abstract classes to reuse code.
+The OOP solution is illustrated in the <a href="../DeveloperGuide.adoc">developer’s guide</a>.</p>
+</li>
+<li>
+<p><code>display</code> also required mastery of JavaFX.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=larrylawl&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">tP Code Dashboard</a>]</p>
+</li>
+<li>
+<p><strong>Functional Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Model</strong>: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/model/ModelManager.java">Model Manager</a>]</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>getPolicyPopularityBreakdown()</code>, <code>getAgeGroupBreakdown()</code>, <code>getGenderBreakdown()</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>View</strong>: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/resources/view/BarChartView.fxml">Bar Chart View</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/resources/view/PieChartView.fxml">Pie Chart View</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/resources/view/LineChartView.fxml">Line Chart View</a>]</p>
+</li>
+<li>
+<p><strong>Controller</strong>: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/ui/DisplayController.java">Display Controller</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/ui/AxisController.java">Axis Controller</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/ui/PieChartController.java">Piechart Controller</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/ui/LineChartController.java">Linechart Controller</a>]</p>
+</li>
+<li>
+<p><strong>Command</strong>: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/logic/commands/DisplayCommand.java">Display Command</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/logic/parser/DisplayCommandParser.java">Display Command Parser</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Test Code Contributed</strong>: [<a href="https://github.com">Display Command Test</a>][<a href="https://github.com">Display Command Parser Test</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/model/ModelManagerTest.java">Model Manager Test</a>]</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/PolicyPopBreakdown.png" alt="PolicyPopBreakdown" width="800">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Save policies into JSON. Policy data needs to persist across usage of application. [Pull request <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/81">#81</a>]</p>
+</li>
+<li>
+<p>List Policy Command. [Pull Request <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/86">#86</a>]</p>
+</li>
+<li>
+<p>Updated tests to include policies. [Pull Request <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/91">#91</a>]</p>
+</li>
+<li>
+<p>Utility to handle DateOfBirth (such as <code>parseAgeGroup</code>) [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/commons/util/TimeUtil.java">Functional Code</a>][<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/commons/util/TimeUtilTest.java">Test Code</a>]</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up <span class="image"><a class="image" href="https://travis-ci.org/AY1920S1-CS2103-F09-4/main"><img src="https://travis-ci.org/AY1920S1-CS2103-F09-4/main.svg?branch=master" alt="Build Status"></a></span>
+<a href="https://coveralls.io/github/AY1920S1-CS2103-F09-4/main?branch=master"><span class="image"><img src="https://coveralls.io/repos/github/AY1920S1-CS2103-F09-4/main/badge.svg?branch=master" alt="Coverage Status"></span></a> <span class="image"><a class="image" href="https://app.netlify.com/sites/insurelytics/deploys"><img src="https://api.netlify.com/api/v1/badges/069e22b0-46f6-4637-aaec-3d593e33589f/deploy-status" alt="Netlify Status"></a></span>
+<span class="image"><a class="image" href="https://www.codacy.com/manual/larrylawl/main?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AY1920S1-CS2103-F09-4/main&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/b4c6f87fc11549a49da8e727b71a9cc0" alt="Codacy code quality"></a></span></p>
+</li>
+<li>
+<p>IntelliJ to auto format based on <code>checkstyle.xml</code>. (details below)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Project Management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases from v1.1 to v1.3 on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Resolved part of the documentation bugs from PE dry run (Pull request <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/187">#187</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">Display Indicator: <code>display</code></a></h3>
+<div class="paragraph">
+<p>Displays indicator according to specified format.</p>
+</div>
+<div class="paragraph">
+<p>Format:
+<code>display i/INDICATOR f/FORMAT</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Indicators include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>policy-popularity-breakdown</code></p>
+</li>
+<li>
+<p><code>age-group-breakdown</code></p>
+</li>
+<li>
+<p><code>gender-breakdown</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Formats include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>piechart</code></p>
+</li>
+<li>
+<p><code>barchart</code></p>
+</li>
+<li>
+<p><code>linechart</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Every format supports every indicator
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="paragraph">
+<p><code>display i/policy-popularity-breakdown f/piechart</code><br>
+Displays policy popularity breakdown as a piechart.</p>
+</div>
+<div class="paragraph">
+<p>Expected Output:<br></p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/PolicyPopBreakdown.png" alt="PolicyPopBreakdown" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><code>display i/age-group-breakdown f/barchart</code><br>
+Displays age group breakdown as a barchart.</p>
+</div>
+<div class="paragraph">
+<p>Expected Output:<br></p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/AgeGroupBreakdown.png" alt="AgeGroupBreakdown" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><code>display i/gender-breakdown f/linechart</code><br>
+Displays gender breakdown as a linechart.</p>
+</div>
+<div class="paragraph">
+<p>Expected Output:<br></p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/GenderBreakdown.png" alt="GenderBreakdown" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Adds a person to the list of people<br>
+Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BIRTH g/GENDER</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>DATE_OF_BIRTH</code> are in the form <code>DD.MM.YYYY</code>.</p>
+</li>
+<li>
+<p><code>NAME</code> can take any values and should not be blank.</p>
+</li>
+<li>
+<p><code>ADDRESS</code> can take any values and should not be blank.</p>
+</li>
+<li>
+<p><code>GENDER</code> must either be <code>Male</code> or <code>Female</code>.</p>
+</li>
+<li>
+<p>Exact input validations for <code>NRIC</code>, <code>PHONE_NUMBER</code>, <code>EMAIL</code> are specified in sections <a href="#Incorrect NRIC Alert">[Incorrect NRIC Alert]</a>,
+<a href="#Incorrect Contact Number Alert">[Incorrect Contact Number Alert]</a>, and <a href="#Incorrect Email Address Alert">[Incorrect Email Address Alert]</a> respectively.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/John Doe ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.1912 g/Male</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>New person added: John Doe NRIC: S0000001J Phone: 98765432 Email: johnd@example.com Address: 311, Clementi Ave 2, #02-25 Date of birth: 12 December 1912 Gender: Male</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="display-feature"><a class="link" href="#display-feature">Display Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>display</code> mechanism follows the Model-View-Controller framework. The model is facilitated by the <code>AddressBook</code>
+instance, which provides the data the controller needs.
+The controller is facilitated by an abstract class <code>DisplayController</code>, which extends <code>UIPart&lt;Region&gt;</code>.
+Every supported format controller extends this abstract class.</p>
+</div>
+<div class="paragraph">
+<p>The following class diagram shows the OOP solution for <code>display</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DisplayClassDiagram.png" alt="DisplayClassDiagram">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Every controller needs to support every indicator. In the event a controller cannot display a particular
+indicator, it will throw a <code>parseException</code> error, which provides suggestions of which visual controllers are supported
+by the particular indicator.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The view is facilitated by the associated FXML. These views share a common
+CSS, and also have their individual CSS file.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the display mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user executes the <code>display i/policy-popularity-breakdown f/barchart</code> command to display the policy
+popularity breakdown indicator in bar chart format. The execution of a <code>display</code> command determines
+what will be shown (<code>displayIndicator</code>) and how it will be shown (<code>displayFormat</code>).</p>
+</div>
+<div class="paragraph">
+<p>Step 2. <code>displayFormat</code> specifies that the controller <code>BarChartController</code> will be instantiated.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <code>BarChartController</code> initialises all the attributes of its associated FXML in its construction.
+Let us take a  closer look at the initialisation of the <code>series</code> attribute. The controller utilises the display
+indicator <code>policy-popularity-breakdown</code> to retrieve the data in the model it needs. The controller
+then casts the model’s data type to the data type supported by bar charts. The result is assigned to <code>series</code> attribute.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows the interaction between UI, Controller and Model for steps 2 and 3:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DisplaySequenceDiagram.png" alt="DisplaySequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Step 4. The bar chart controller then sets all the attributes of its associated FXML.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. Finally, the <code>MainWindow</code> calls <code>DisplayController#getRoot()</code> and displays the view.</p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes what happens when a user executes the display command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DisplayActivityDiagram.png" alt="DisplayActivityDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-should-controllers-interact-with-model"><a class="link" href="#aspect-how-should-controllers-interact-with-model">Aspect: How should controllers interact with model</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Within controllers (by passing <code>logic</code>, which accesses the model, as an argument
+to the instantiation of a controller.)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Every controller handles their own interaction with the model.</p>
+</li>
+<li>
+<p>Cons: Inconsistent with current implementation (alternative 2).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Within <code>MainWindow</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Consistent with current implementation</p>
+</li>
+<li>
+<p>Cons: The controllers are fully dependent on <code>MainWindow</code> for the data from the model. This entails that</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-oop-solution-for-visual-controllers"><a class="link" href="#aspect-oop-solution-for-visual-controllers">Aspect: OOP solution for visual controllers</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Display controllers to extend from abstract class <code>DisplayController</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows display controller subclasses to share code. (refer to class diagram above)</p>
+</li>
+<li>
+<p>Subclasses have many common methods (<code>initIndicators(Logic)</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Display controllers to implement interface <code>DisplayController</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Satisfies the can-do relationship of an interface.</p>
+</li>
+<li>
+<p>Cons: Restricted to public access modifiers. This violates Law of Demeter.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-person" class="discrete">Use case: Add person</h3>
+<div class="paragraph">
+<p>Guarantees:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Person is added even if input fields might be invalid (see 1a).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a person.</p>
+</li>
+<li>
+<p>AddressBook adds the person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Either of the given NRIC, contact number, or email address is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. AddressBook adds the person into address book.</p>
+</li>
+<li>
+<p>1a1. AddressBook shows a warning.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Duplicate profile is added.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. AddressBook shows an error message and will attempt to merge the profile.</p>
+<h3 id="use-case-edit-person" class="discrete">Use case: Edit person</h3>
+<div class="paragraph">
+<p>Guarantees:<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Person is edited even if input fields might be invalid (see 3a).</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a person</p>
+</li>
+<li>
+<p>AddressBook shows details of the person</p>
+</li>
+<li>
+<p>User requests to edit that specific person.</p>
+</li>
+<li>
+<p>AddressBook edits the person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Person is not found</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Either of the given NRIC, contact number, or email address is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook adds the person into address book.</p>
+</li>
+<li>
+<p>3a2. AddressBook shows a warning.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User requests to cancel the edit.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>*a1. Address books requests to confirm the cancellation.</p>
+</li>
+<li>
+<p>*a1. User confirms the cancellation.
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 01:02:26 UTC</div></div></div></body></html>
