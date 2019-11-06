@@ -246,33 +246,35 @@ For each different attribute, there will be a prompt to suggest a change from th
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/S9999999J p/91234567 e/johndoe@example.com a/John street, block 123, #01-01 age/30 g/Male</code></p>
+<p><code>add n/John Doe ic/S9999999J p/ e/ a/ age/30 g/Male</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>This profile already exists:
-n/John Doe ic/S9999999J p/98765432 e/johndoe@example.com a/John street, block 123, #01-01 age/30`
-Do you wish to update John Doe’s profile?</code></pre>
+<pre class="CodeRay highlight"><code>This person already exists in the address book
+John Doe
+NRIC: S9999999J; Phone: 98765432; Email: johndoe@example.com; Address: John street, block 123, #01-01; Date of Birth: 12 December 1992; Gender: Male
+Policies: [Health Insurance][Fire Insurance]
+Tags: [diabetic][high blood pressure]
+Your input:
+John Doe
+NRIC: S0000001J; Phone: 91234567; Email: johndoe@example.com; Address: John street, block 123, #01-01; Date of Birth: 12 December 1992; Gender: Male
+Do you wish to edit this person's profile?
+Please press enter or 'yes' to proceed or 'no' to skip.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>User may input <code>yes</code> or <code>no</code>. Further prompts will be provided if user inputs  <code>yes</code></p>
+<p>User may input <code>yes</code> or press enter to proceed with the merge and <code>no</code> to skip the merge.
+Further prompts will be provided if user inputs  <code>yes</code> or presses enter.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Would you like to update p/98765432 to p/91234567?</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If <code>yes</code>, the new profile will be created.
-If <code>no</code>,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>You may edit John Doe’s profile using the edit command. For more information, type help.</code></pre>
+<pre class="CodeRay highlight"><code>Do you wish to edit this person's PHONE?
+Original: 98765432
+Input: 91234567
+Please press enter or 'yes' to proceed or 'no' to skip.</code></pre>
 </div>
 </div>
 </div>
@@ -493,4 +495,4 @@ If it is not the last merge, <code>MergeCommand#removeFirstDifferentField</code>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-05 09:13:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 16:46:54 UTC</div></div></div></body></html>
