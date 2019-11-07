@@ -55,13 +55,14 @@
 <li><a href="#expanding-a-policy-code-expandpolicy-code">3.35. Expanding a policy: <code>expandpolicy</code></a></li>
 <li><a href="#display-indicator-code-display-code">3.36. Display Indicator: <code>display</code></a></li>
 <li><a href="#restore-deleted-items-code-restore-code">3.37. Restore Deleted Items: <code>restore</code></a></li>
-<li><a href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></li>
-<li><a href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.41. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">3.43. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></li>
-<li><a href="#suggestions-while-typing-code-coming-in-v2-0-code">3.44. Suggestions while typing <code>[coming in v2.0]</code></a></li>
+<li><a href="#binitemexpiry">3.38. Set expiry time of bin items: <code>binitemexpiry</code></a></li>
+<li><a href="#undo-recently-entered-commands">3.39. Undo recently entered commands</a></li>
+<li><a href="#redo-recently-undone-commands">3.40. Redo recently undone commands</a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.41. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.42. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.43. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">3.44. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></li>
+<li><a href="#suggestions-while-typing-code-coming-in-v2-0-code">3.45. Suggestions while typing <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -807,7 +808,8 @@ Format: <code>delete INDEX</code></p>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>Deleted persons are moved into the bin, where they stay there for 30 days before being removed permanently.</p>
+<p>Deleted persons are moved into the bin, where they stay there for a default of 30 days before being removed
+permanently. This default value can be changed with the <a href="#binitemexpiry">binitemexpiry</a> command.</p>
 </li>
 </ul>
 </div>
@@ -861,6 +863,10 @@ Format: <code>deletepolicy INDEX</code></p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Deleted persons are moved into the bin, where they stay there for a default of 30 days before being removed
+permanently. This default value can be changed with the <a href="#binitemexpiry">binitemexpiry</a> command.</p>
 </li>
 </ul>
 </div>
@@ -1084,7 +1090,7 @@ Deletes a <code>high_risk</code> tag from the 1st policy in the results of the <
 <div class="sect2">
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.27. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
+<p>Clears all entries from the address book, including the bin.+
 Format: <code>clear</code></p>
 </div>
 </div>
@@ -1408,9 +1414,6 @@ Displays gender breakdown as a linechart.</p>
 <li>
 <p>The index must be a positive integer 1, 2, 3, …​</p>
 </li>
-<li>
-<p>Mass restoration by field is also possible by specifying <code>field:value</code>.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -1435,7 +1438,70 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.38. Undo recently entered commands</a></h3>
+<h3 id="binitemexpiry"><a class="link" href="#binitemexpiry">3.38. Set expiry time of bin items: <code>binitemexpiry</code></a></h3>
+<div class="paragraph">
+<p>User can set the amount of time bin items stay in the bin before they are permanently removed.</p>
+</div>
+<div class="paragraph">
+<p>Format:
+<code>binitemexpiry UNIT/AMOUNT</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>UNIT</code> can take the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>s</p>
+</li>
+<li>
+<p>mins</p>
+</li>
+<li>
+<p>hrs</p>
+</li>
+<li>
+<p>days</p>
+</li>
+<li>
+<p>months</p>
+</li>
+<li>
+<p>years</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>AMOUNT</code> <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p><code>binitemexpiry days/30</code><br></p>
+</div>
+<div class="paragraph">
+<p>Set all BinItems to expire 30 days their deletion. They will be removed permanently once they exceed their expiry date.</p>
+</div>
+<div class="paragraph">
+<p>Expected Output:<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Changed bin item expiry time! Items in the Bin will be removed permanently 30 days after their deletion.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">3.39. Undo recently entered commands</a></h3>
 <div class="paragraph">
 <p>User can simply enter the command <code>undo</code> to undo the most recent address book change.</p>
 </div>
@@ -1455,7 +1521,7 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.39. Redo recently undone commands</a></h3>
+<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">3.40. Redo recently undone commands</a></h3>
 <div class="paragraph">
 <p>User can simply enter the command <code>redo</code> to redo the most recent undone address book change.</p>
 </div>
@@ -1475,34 +1541,34 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.40. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.41. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.41. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.42. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.42. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.43. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code"><a class="link" href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">3.43. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></h3>
+<h3 id="policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code"><a class="link" href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">3.44. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>A list of policies that a person is eligible for will be shown if the user attempts to assign a policy to someone who is
 ineligible for it.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="suggestions-while-typing-code-coming-in-v2-0-code"><a class="link" href="#suggestions-while-typing-code-coming-in-v2-0-code">3.44. Suggestions while typing <code>[coming in v2.0]</code></a></h3>
+<h3 id="suggestions-while-typing-code-coming-in-v2-0-code"><a class="link" href="#suggestions-while-typing-code-coming-in-v2-0-code">3.45. Suggestions while typing <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Suggestions of correct command words will be listed immediately once an incorrect command word is detected.</p>
 </div>
@@ -1622,6 +1688,10 @@ e.g. <code>display i/policy-popularity-breakdown f/piechart</code></p>
 <p><strong>Redo the most recent undone command</strong>: <code>redo</code></p>
 </li>
 <li>
+<p><strong>Set expiry time of bin items</strong>: <code>binitemexpiry</code><br>
+e.g. <code>binitemexpiry days/30</code></p>
+</li>
+<li>
 <p><strong>Clear</strong> : <code>clear</code></p>
 </li>
 <li>
@@ -1630,4 +1700,4 @@ e.g. <code>display i/policy-popularity-breakdown f/piechart</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-06 16:46:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 01:16:59 UTC</div></div></div></body></html>
