@@ -17,7 +17,7 @@
 <div class="paragraph">
 <p>Insurelytics is a desktop client management application for insurance agents.
 Insurelytics facilitates the tracking of client and policies, and also generate statistical analytics to provide insights for the agent.
-The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 80 kLoC.</p>
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 85 kLoC.</p>
 </div>
 </div>
 </div>
@@ -43,7 +43,7 @@ Visualisation comes in the form of bar chart, pie chart, or line chart.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>display</code> mechanism follows the MVC framework. It also uses an OOP solution, which features the use of abstract classes to reuse code.
+<p>The <code>display</code> mechanism follows the Model-View-Controller design pattern. It also uses an OOP solution, which features the use of abstract classes to reuse code.
 The OOP solution is illustrated in the <a href="../DeveloperGuide.adoc">developer’s guide</a>.</p>
 </li>
 <li>
@@ -286,13 +286,13 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BI
 <div class="ulist">
 <ul>
 <li>
-<p><code>DATE_OF_BIRTH</code> are in the form <code>DD.MM.YYYY</code>.</p>
-</li>
-<li>
-<p><code>NAME</code> can take any values and should not be blank.</p>
+<p><code>NAME</code> should only contain alphanumeric characters and spaces, and it should not be blank.</p>
 </li>
 <li>
 <p><code>ADDRESS</code> can take any values and should not be blank.</p>
+</li>
+<li>
+<p><code>DATE_OF_BIRTH</code> are in the form <code>DD.MM.YYYY</code>.</p>
 </li>
 <li>
 <p><code>GENDER</code> must either be <code>Male</code> or <code>Female</code>.</p>
@@ -324,6 +324,56 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BI
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="adding-a-policy-code-addpolicy-code"><a class="link" href="#adding-a-policy-code-addpolicy-code">Adding a policy: <code>addpolicy</code></a></h3>
+<div class="paragraph">
+<p>Adds a policy to the list of policies<br>
+Format: <code>addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] pr/PRICE [sa/START_AGE] [ea/END_AGE]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>NAME</code> should only contain alphanumeric characters and spaces, and should not be blank.</p>
+</li>
+<li>
+<p><code>DESCRIPTION</code> should only contain alphanumeric characters, punctuation or whitespace, and should not be blank.
+The first character should be a alphanumeric character.</p>
+</li>
+<li>
+<p><code>COVERAGE</code> should contain valid day, month or year numbers. At least one of the optional fields of coverage (day, month or year)
+must be provided.</p>
+</li>
+<li>
+<p><code>PRICE</code> should start off with "$" and contain only numbers, and should not be blank</p>
+</li>
+<li>
+<p><code>START_AGE</code> and <code>END_AGE</code> should contain only numbers, and should not be blank. <code>START_AGE</code> must not exceed <code>END_AGE</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addpolicy n/SeniorCare d/Care for seniors c/days/20 months/11 years/5 pr/$50000 sa/50 ea/75</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>New policy added: Seniorcare Description: Care for seniors Coverage: days/20 months/11 years/5 Price: $50000 Start Age: 50 End Age: 75</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -344,7 +394,7 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BI
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>display</code> mechanism follows the Model-View-Controller framework. The model is facilitated by the <code>AddressBook</code>
+<p>The <code>display</code> mechanism follows the Model-View-Controller design pattern. The model is facilitated by the <code>AddressBook</code>
 instance, which provides the data the controller needs.
 The controller is facilitated by an abstract class <code>DisplayController</code>, which extends <code>UIPart&lt;Region&gt;</code>.
 Every supported format controller extends this abstract class.</p>
@@ -642,4 +692,4 @@ Use case ends.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 02:35:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-07 03:07:28 UTC</div></div></div></body></html>
