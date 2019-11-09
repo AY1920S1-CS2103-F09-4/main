@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Insurelytics</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://nus-cs2103-ay1920s1.github.io/insurelytics/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Insurelytics - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/InsurelyticsLogo.png" alt="InsurelyticsLogo" width="250">
 </div>
@@ -25,45 +25,46 @@
 <li><a href="#listing-all-persons-code-listpeople-code">4.4. Listing all persons : <code>listpeople</code></a></li>
 <li><a href="#listing-all-policies-code-listpolicy-code">4.5. Listing all policies : <code>listpolicy</code></a></li>
 <li><a href="#listing-all-bin-items-code-listbin-code">4.6. Listing all bin items: <code>listbin</code></a></li>
-<li><a href="#listing-command-history-code-history-code">4.7. Listing command history : <code>history</code></a></li>
-<li><a href="#expanding-a-profile-code-expandperson-code">4.8. Expanding a profile: <code>expandperson</code></a></li>
-<li><a href="#expanding-a-policy-code-expandpolicy-code">4.9. Expanding a policy: <code>expandpolicy</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">4.10. Editing a person : <code>edit</code></a></li>
-<li><a href="#editing-a-policy-code-editpolicy-code">4.11. Editing a policy : <code>editpolicy</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">4.12. Locating persons by name: <code>find</code></a></li>
-<li><a href="#locating-policies-by-keywords-code-findpolicy-code">4.13. Locating policies by keywords: <code>findpolicy</code></a></li>
-<li><a href="#locating-people-by-tags-code-findtagpeople-code">4.14. Locating people by tags: <code>findtagpeople</code></a></li>
-<li><a href="#locating-policies-by-tags-code-findtagpolicy-code">4.15. Locating policies by tags: <code>findtagpolicy</code></a></li>
-<li><a href="#find-current-policyholders-code-findpolicyholders-code">4.16. Find current policyholders: <code>findpolicyholders</code></a></li>
-<li><a href="#find-eligible-policies-code-eligiblepolicies-code">4.17. Find eligible policies: <code>eligiblepolicies</code></a></li>
-<li><a href="#find-eligible-people-code-eligiblepeople-code">4.18. Find eligible people: <code>eligiblepeople</code></a></li>
-<li><a href="#adding-tags-to-a-person-code-addtag-code">4.19. Adding tags to a person : <code>addtag</code></a></li>
-<li><a href="#adding-tags-to-a-policy-code-addpolicytag-code">4.20. Adding tags to a policy : <code>addpolicytag</code></a></li>
-<li><a href="#adding-criteria-to-a-policy-code-addcriteria-code">4.21. Adding criteria to a policy : <code>addcriteria</code></a></li>
-<li><a href="#deleting-criteria-from-a-policy-code-deletecriteria-code">4.22. Deleting criteria from a policy : <code>deletecriteria</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">4.23. Deleting a person : <code>delete</code></a></li>
-<li><a href="#deleting-a-policy-code-deletepolicy-code">4.24. Deleting a policy : <code>deletepolicy</code></a></li>
-<li><a href="#adding-policies-to-a-person-code-assignpolicy-code">4.25. Adding policies to a person : <code>assignpolicy</code></a></li>
-<li><a href="#deleting-policies-from-a-person-code-unassignpolicy-code">4.26. Deleting policies from a person : <code>unassignpolicy</code></a></li>
-<li><a href="#deleting-tags-from-a-person-code-deletetag-code">4.27. Deleting tags from a person : <code>deletetag</code></a></li>
-<li><a href="#deleting-tags-from-a-policy-code-deletepolicytag-code">4.28. Deleting tags from a policy : <code>deletepolicytag</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.29. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#incorrect-nric-alert">4.30. Incorrect NRIC Alert</a></li>
-<li><a href="#incorrect-contact-number-alert">4.31. Incorrect Contact Number Alert</a></li>
-<li><a href="#incorrect-email-address-alert">4.32. Incorrect Email Address Alert</a></li>
-<li><a href="#incorrect-command-suggestions">4.33. Incorrect Command Suggestions</a></li>
-<li><a href="#turning-command-suggestions-on-and-off">4.34. Turning Command Suggestions On and off</a></li>
-<li><a href="#duplicate-profile-alert">4.35. Duplicate profile alert</a></li>
-<li><a href="#display-indicator-code-display-code">4.36. Display Indicator: <code>display</code></a></li>
-<li><a href="#restore-deleted-items-code-restore-code">4.37. Restore Deleted Items: <code>restore</code></a></li>
-<li><a href="#binitemexpiry">4.38. Set expiry time of bin items: <code>binitemexpiry</code></a></li>
-<li><a href="#undo-recently-entered-commands">4.39. Undo recently entered commands</a></li>
-<li><a href="#redo-recently-undone-commands">4.40. Redo recently undone commands</a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.41. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.42. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.43. Encrypting data files <code>[coming in v2.0]</code></a></li>
-<li><a href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">4.44. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></li>
-<li><a href="#suggestions-while-typing-code-coming-in-v2-0-code">4.45. Suggestions while typing <code>[coming in v2.0]</code></a></li>
+<li><a href="#expanding-a-profile-code-expandperson-code">4.7. Expanding a profile: <code>expandperson</code></a></li>
+<li><a href="#expanding-a-policy-code-expandpolicy-code">4.8. Expanding a policy: <code>expandpolicy</code></a></li>
+<li><a href="#editing-a-person-code-edit-code">4.9. Editing a person : <code>edit</code></a></li>
+<li><a href="#editing-a-policy-code-editpolicy-code">4.10. Editing a policy : <code>editpolicy</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">4.11. Locating persons by name: <code>find</code></a></li>
+<li><a href="#locating-policies-by-keywords-code-findpolicy-code">4.12. Locating policies by keywords: <code>findpolicy</code></a></li>
+<li><a href="#locating-people-by-tags-code-findtagpeople-code">4.13. Locating people by tags: <code>findtagpeople</code></a></li>
+<li><a href="#locating-policies-by-tags-code-findtagpolicy-code">4.14. Locating policies by tags: <code>findtagpolicy</code></a></li>
+<li><a href="#find-current-policyholders-code-findpolicyholders-code">4.15. Find current policyholders: <code>findpolicyholders</code></a></li>
+<li><a href="#find-eligible-policies-code-eligiblepolicies-code">4.16. Find eligible policies: <code>eligiblepolicies</code></a></li>
+<li><a href="#find-eligible-people-code-eligiblepeople-code">4.17. Find eligible people: <code>eligiblepeople</code></a></li>
+<li><a href="#adding-tags-to-a-person-code-addtag-code">4.18. Adding tags to a person : <code>addtag</code></a></li>
+<li><a href="#adding-tags-to-a-policy-code-addpolicytag-code">4.19. Adding tags to a policy : <code>addpolicytag</code></a></li>
+<li><a href="#adding-criteria-to-a-policy-code-addcriteria-code">4.20. Adding criteria to a policy : <code>addcriteria</code></a></li>
+<li><a href="#deleting-criteria-from-a-policy-code-deletecriteria-code">4.21. Deleting criteria from a policy : <code>deletecriteria</code></a></li>
+<li><a href="#deleting-a-person-code-delete-code">4.22. Deleting a person : <code>delete</code></a></li>
+<li><a href="#deleting-a-policy-code-deletepolicy-code">4.23. Deleting a policy : <code>deletepolicy</code></a></li>
+<li><a href="#adding-policies-to-a-person-code-assignpolicy-code">4.24. Adding policies to a person : <code>assignpolicy</code></a></li>
+<li><a href="#deleting-policies-from-a-person-code-unassignpolicy-code">4.25. Deleting policies from a person : <code>unassignpolicy</code></a></li>
+<li><a href="#deleting-tags-from-a-person-code-deletetag-code">4.26. Deleting tags from a person : <code>deletetag</code></a></li>
+<li><a href="#deleting-tags-from-a-policy-code-deletepolicytag-code">4.27. Deleting tags from a policy : <code>deletepolicytag</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.28. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#incorrect-nric-alert">4.29. Incorrect NRIC Alert</a></li>
+<li><a href="#incorrect-contact-number-alert">4.30. Incorrect Contact Number Alert</a></li>
+<li><a href="#incorrect-email-address-alert">4.31. Incorrect Email Address Alert</a></li>
+<li><a href="#incorrect-command-suggestions">4.32. Incorrect Command Suggestions</a></li>
+<li><a href="#turning-command-suggestions-on-and-off-code-suggestion-code">4.33. Turning Command Suggestions On and off : <code>suggestion</code></a></li>
+<li><a href="#duplicate-profile-alert">4.34. Duplicate profile alert</a></li>
+<li><a href="#display-indicator-code-display-code">4.35. Display Indicator: <code>display</code></a></li>
+<li><a href="#restore-deleted-items-code-restore-code">4.36. Restore Deleted Items: <code>restore</code></a></li>
+<li><a href="#binitemexpiry">4.37. Set expiry time of bin items: <code>binitemexpiry</code></a></li>
+<li><a href="#undo-recently-entered-commands-code-undo-code">4.38. Undo recently entered commands : <code>undo</code></a></li>
+<li><a href="#redo-recently-undone-commands-code-redo-code">4.39. Redo recently undone commands : <code>redo</code></a></li>
+<li><a href="#listing-command-history-code-history-code">4.40. Listing command history : <code>history</code></a></li>
+<li><a href="#navigating-command-history-by-pressing-up-down-keys">4.41. Navigating command history by pressing up/down keys</a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.42. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.43. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.44. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">4.45. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></li>
+<li><a href="#suggestions-while-typing-code-coming-in-v2-0-code">4.46. Suggestions while typing <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -296,8 +297,8 @@ Format: <code>add n/NAME ic/NRIC p/PHONE_NUMBER e/EMAIL a/ADDRESS dob/DATE_OF_BI
 <p><code>GENDER</code> must either be <code>Male</code> or <code>Female</code>.</p>
 </li>
 <li>
-<p>Exact input validations for <code>NRIC</code>, <code>PHONE_NUMBER</code>, <code>EMAIL</code> are specified in sections <a href="#incorrect-nric-alert">Section 4.30, &#8220;Incorrect NRIC Alert&#8221;</a>,
-<a href="#incorrect-contact-number-alert">Section 4.31, &#8220;Incorrect Contact Number Alert&#8221;</a>, and <a href="#incorrect-email-address-alert">Section 4.32, &#8220;Incorrect Email Address Alert&#8221;</a> respectively.</p>
+<p>Exact input validations for <code>NRIC</code>, <code>PHONE_NUMBER</code>, <code>EMAIL</code> are specified in sections <a href="#incorrect-nric-alert">Section 4.29, &#8220;Incorrect NRIC Alert&#8221;</a>,
+<a href="#incorrect-contact-number-alert">Section 4.30, &#8220;Incorrect Contact Number Alert&#8221;</a>, and <a href="#incorrect-email-address-alert">Section 4.31, &#8220;Incorrect Email Address Alert&#8221;</a> respectively.</p>
 </li>
 </ul>
 </div>
@@ -347,7 +348,8 @@ must be provided.</p>
 <p><code>PRICE</code> should start off with "$" and contain only numbers, and should not be blank</p>
 </li>
 <li>
-<p><code>START_AGE</code> and <code>END_AGE</code> should contain only numbers, and should not be blank. <code>START_AGE</code> must not exceed <code>END_AGE</code>.</p>
+<p><code>START_AGE</code> and <code>END_AGE</code> should contain only numbers, and should not be blank. <code>START_AGE</code> must not exceed <code>END_AGE</code>.
+Maximum value of <code>START_AGE</code> and <code>END_AGE</code> is 120.</p>
 </li>
 </ul>
 </div>
@@ -394,14 +396,7 @@ Format: <code>listbin</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-command-history-code-history-code"><a class="link" href="#listing-command-history-code-history-code">4.7. Listing command history : <code>history</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all previously entered (valid) commands.<br>
-Format: <code>history</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="expanding-a-profile-code-expandperson-code"><a class="link" href="#expanding-a-profile-code-expandperson-code">4.8. Expanding a profile: <code>expandperson</code></a></h3>
+<h3 id="expanding-a-profile-code-expandperson-code"><a class="link" href="#expanding-a-profile-code-expandperson-code">4.7. Expanding a profile: <code>expandperson</code></a></h3>
 <div class="paragraph">
 <p>Expands the person details on the right panel.</p>
 </div>
@@ -432,7 +427,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="expanding-a-policy-code-expandpolicy-code"><a class="link" href="#expanding-a-policy-code-expandpolicy-code">4.9. Expanding a policy: <code>expandpolicy</code></a></h3>
+<h3 id="expanding-a-policy-code-expandpolicy-code"><a class="link" href="#expanding-a-policy-code-expandpolicy-code">4.8. Expanding a policy: <code>expandpolicy</code></a></h3>
 <div class="paragraph">
 <p>Expands the policy details on the right panel.</p>
 </div>
@@ -463,10 +458,10 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">4.10. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">4.9. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH]</code></p>
+Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH] [g/GENDER]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -482,7 +477,7 @@ Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>If editing a person&#8217;s date of birth results in him being ineligible for a policy/multiple policies he currently possesses, they will be unassigned from him.</p>
+<p>If editing a person&#8217;s details results in him being ineligible for a policy/multiple policies he currently possesses, they will be unassigned from him.</p>
 </li>
 </ul>
 </div>
@@ -501,19 +496,27 @@ To edit tags, use <code>addTag</code> or <code>deleteTag</code>
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>edit 1 p/91234567 e/johndoe@example.com</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Considering the first person is <code>Alex Yeoh</code>, sample output is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Edited Person: Alex Yeoh
+NRIC: S0000001A; Phone: 91234567; Email: johndoe@example.com; Address: Blk 30 Geylang Street 29, #06-40; Date of Birth: 12 December 1998; Gender: Male
+Policies: [Teenage]
+Tags: [diabetic]</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-policy-code-editpolicy-code"><a class="link" href="#editing-a-policy-code-editpolicy-code">4.11. Editing a policy : <code>editpolicy</code></a></h3>
+<h3 id="editing-a-policy-code-editpolicy-code"><a class="link" href="#editing-a-policy-code-editpolicy-code">4.10. Editing a policy : <code>editpolicy</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing policy in the address book.<br>
 Format: <code>editpolicy INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]] [pr/PRICE] [sa/START_AGE] [ea/END_AGE]</code></p>
@@ -530,6 +533,11 @@ Format: <code>editpolicy INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][mon
 </li>
 <li>
 <p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>If editing a policy&#8217;s details results in it being ineligible for person(s), the policy is <strong>not</strong> unassigned from the corresponding people.
+The reason behind this is that the relevant people signed the policy before the terms were changed, hence they should still be holding
+the previous version of the policies they signed.</p>
 </li>
 </ul>
 </div>
@@ -548,19 +556,27 @@ To edit policy tags, use <code>addPolicyTag</code> or <code>deletePolicyTag</cod
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>editpolicy 1 n/Seniors</code><br>
-Edits the name of the 1st policy to <code>Seniors</code>.</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>editpolicy 1 d/Honda Insurance p/$10000 sa/25 ea/80</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Considering the first policy is <code>Car Insurance</code>, sample output is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Edited Policy: Car Insurance
+Description: Honda Insurance; Coverage: 12 years, 11 months, 10 days; Price: $10000; Start Age: 25; End Age: 80
+Criteria: [diabetic]
+Tags: [sample]</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">4.12. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">4.11. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -605,7 +621,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-policies-by-keywords-code-findpolicy-code"><a class="link" href="#locating-policies-by-keywords-code-findpolicy-code">4.13. Locating policies by keywords: <code>findpolicy</code></a></h3>
+<h3 id="locating-policies-by-keywords-code-findpolicy-code"><a class="link" href="#locating-policies-by-keywords-code-findpolicy-code">4.12. Locating policies by keywords: <code>findpolicy</code></a></h3>
 <div class="paragraph">
 <p>Finds policies whose names or descriptions contain any of the given keywords.<br>
 Format: <code>findpolicy KEYWORD [MORE_KEYWORDS]</code></p>
@@ -643,7 +659,7 @@ Returns any policy having names or descriptions containing <code>family</code> o
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-people-by-tags-code-findtagpeople-code"><a class="link" href="#locating-people-by-tags-code-findtagpeople-code">4.14. Locating people by tags: <code>findtagpeople</code></a></h3>
+<h3 id="locating-people-by-tags-code-findtagpeople-code"><a class="link" href="#locating-people-by-tags-code-findtagpeople-code">4.13. Locating people by tags: <code>findtagpeople</code></a></h3>
 <div class="paragraph">
 <p>Finds people who have the specified tag(s).<br>
 Format: <code>findtagpeople TAG [MORE_TAGS]</code></p>
@@ -670,7 +686,7 @@ Format: <code>findtagpeople TAG [MORE_TAGS]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-policies-by-tags-code-findtagpolicy-code"><a class="link" href="#locating-policies-by-tags-code-findtagpolicy-code">4.15. Locating policies by tags: <code>findtagpolicy</code></a></h3>
+<h3 id="locating-policies-by-tags-code-findtagpolicy-code"><a class="link" href="#locating-policies-by-tags-code-findtagpolicy-code">4.14. Locating policies by tags: <code>findtagpolicy</code></a></h3>
 <div class="paragraph">
 <p>Finds policies who have the specified tag(s)<br>
 Format: <code>findtagpolicy TAG [MORE_TAGS]</code></p>
@@ -697,7 +713,7 @@ Format: <code>findtagpolicy TAG [MORE_TAGS]</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-current-policyholders-code-findpolicyholders-code"><a class="link" href="#find-current-policyholders-code-findpolicyholders-code">4.16. Find current policyholders: <code>findpolicyholders</code></a></h3>
+<h3 id="find-current-policyholders-code-findpolicyholders-code"><a class="link" href="#find-current-policyholders-code-findpolicyholders-code">4.15. Find current policyholders: <code>findpolicyholders</code></a></h3>
 <div class="paragraph">
 <p>Finds people in possession of a policy (or policies)<br>
 Format: <code>findpolicyholders INDEX</code></p>
@@ -730,7 +746,7 @@ Finds all people who are in current possession of the 1st policy in the list of 
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-eligible-policies-code-eligiblepolicies-code"><a class="link" href="#find-eligible-policies-code-eligiblepolicies-code">4.17. Find eligible policies: <code>eligiblepolicies</code></a></h3>
+<h3 id="find-eligible-policies-code-eligiblepolicies-code"><a class="link" href="#find-eligible-policies-code-eligiblepolicies-code">4.16. Find eligible policies: <code>eligiblepolicies</code></a></h3>
 <div class="paragraph">
 <p>Finds policies a specific person is eligible for<br>
 Format: <code>eligiblepolicies INDEX</code></p>
@@ -763,7 +779,7 @@ Finds all policies the 1st person in the displayed person list is eligible for.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-eligible-people-code-eligiblepeople-code"><a class="link" href="#find-eligible-people-code-eligiblepeople-code">4.18. Find eligible people: <code>eligiblepeople</code></a></h3>
+<h3 id="find-eligible-people-code-eligiblepeople-code"><a class="link" href="#find-eligible-people-code-eligiblepeople-code">4.17. Find eligible people: <code>eligiblepeople</code></a></h3>
 <div class="paragraph">
 <p>Finds people eligible for a specific policy<br>
 Format: <code>eligiblepeople INDEX</code></p>
@@ -796,7 +812,7 @@ Finds all people eligible for the 1st policy in the displayed policy list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-tags-to-a-person-code-addtag-code"><a class="link" href="#adding-tags-to-a-person-code-addtag-code">4.19. Adding tags to a person : <code>addtag</code></a></h3>
+<h3 id="adding-tags-to-a-person-code-addtag-code"><a class="link" href="#adding-tags-to-a-person-code-addtag-code">4.18. Adding tags to a person : <code>addtag</code></a></h3>
 <div class="paragraph">
 <p>Adds new tag(s) to the person at the specified index.<br>
 Format: <code>addtag INDEX t/TAG [MORE_TAGS]</code></p>
@@ -840,7 +856,7 @@ Adds a <code>high_risk</code> tag to the 1st person in the results of the <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-tags-to-a-policy-code-addpolicytag-code"><a class="link" href="#adding-tags-to-a-policy-code-addpolicytag-code">4.20. Adding tags to a policy : <code>addpolicytag</code></a></h3>
+<h3 id="adding-tags-to-a-policy-code-addpolicytag-code"><a class="link" href="#adding-tags-to-a-policy-code-addpolicytag-code">4.19. Adding tags to a policy : <code>addpolicytag</code></a></h3>
 <div class="paragraph">
 <p>Adds new tag(s) to the policy at the specified index.<br>
 Format: <code>addpolicytag INDEX t/TAG [MORE_TAGS]</code></p>
@@ -884,7 +900,7 @@ Adds a <code>motor_insurance</code> tag to the 1st policy in the results of the 
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-criteria-to-a-policy-code-addcriteria-code"><a class="link" href="#adding-criteria-to-a-policy-code-addcriteria-code">4.21. Adding criteria to a policy : <code>addcriteria</code></a></h3>
+<h3 id="adding-criteria-to-a-policy-code-addcriteria-code"><a class="link" href="#adding-criteria-to-a-policy-code-addcriteria-code">4.20. Adding criteria to a policy : <code>addcriteria</code></a></h3>
 <div class="paragraph">
 <p>Adds new criteria (singular or plural) to the policy at the specified index.<br>
 Format: <code>addcriteria INDEX cr/CRITERIA [MORE_CRITERIA]</code></p>
@@ -928,7 +944,7 @@ Adds a <code>nonsmoker</code> tag to the 1st policy in the results of the <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-criteria-from-a-policy-code-deletecriteria-code"><a class="link" href="#deleting-criteria-from-a-policy-code-deletecriteria-code">4.22. Deleting criteria from a policy : <code>deletecriteria</code></a></h3>
+<h3 id="deleting-criteria-from-a-policy-code-deletecriteria-code"><a class="link" href="#deleting-criteria-from-a-policy-code-deletecriteria-code">4.21. Deleting criteria from a policy : <code>deletecriteria</code></a></h3>
 <div class="paragraph">
 <p>Deletes criteria (singular or plural) from the policy at the specified index.<br>
 Format: <code>deletecriteria INDEX cr/CRITERIA [MORE_CRITERIA]</code></p>
@@ -972,7 +988,7 @@ Deletes the <code>nonsmoker</code> tag from the 1st policy in the results of the
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.23. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.22. Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified person from the list of people.<br>
 Format: <code>delete INDEX</code></p>
@@ -1029,7 +1045,7 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-policy-code-deletepolicy-code"><a class="link" href="#deleting-a-policy-code-deletepolicy-code">4.24. Deleting a policy : <code>deletepolicy</code></a></h3>
+<h3 id="deleting-a-policy-code-deletepolicy-code"><a class="link" href="#deleting-a-policy-code-deletepolicy-code">4.23. Deleting a policy : <code>deletepolicy</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified policy from the address book.<br>
 Format: <code>deletepolicy INDEX</code></p>
@@ -1086,7 +1102,7 @@ Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-policies-to-a-person-code-assignpolicy-code"><a class="link" href="#adding-policies-to-a-person-code-assignpolicy-code">4.25. Adding policies to a person : <code>assignpolicy</code></a></h3>
+<h3 id="adding-policies-to-a-person-code-assignpolicy-code"><a class="link" href="#adding-policies-to-a-person-code-assignpolicy-code">4.24. Adding policies to a person : <code>assignpolicy</code></a></h3>
 <div class="paragraph">
 <p>Assigns a policy to the person at the specified index.<br>
 Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
@@ -1096,16 +1112,13 @@ Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Adds the policies to the person at the specified <code>INDEX</code>.</p>
+<p>The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The policy name refers to the name of the policy.</p>
 </li>
 <li>
-<p>The policy refers to the name of the policy.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>A policy already assigned cannot be assigned again.</p>
 </li>
 <li>
 <p>Each policy name must match the policy exactly as it appears in the absolute policy list.</p>
@@ -1136,7 +1149,7 @@ Assigns the 'Accident Insurance' (the first policy in the list) policy to the 1s
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-policies-from-a-person-code-unassignpolicy-code"><a class="link" href="#deleting-policies-from-a-person-code-unassignpolicy-code">4.26. Deleting policies from a person : <code>unassignpolicy</code></a></h3>
+<h3 id="deleting-policies-from-a-person-code-unassignpolicy-code"><a class="link" href="#deleting-policies-from-a-person-code-unassignpolicy-code">4.25. Deleting policies from a person : <code>unassignpolicy</code></a></h3>
 <div class="paragraph">
 <p>Removes a policy from the person at the specified index.<br>
 Format: <code>unassignpolicy INDEX pol/POLICY NAME</code></p>
@@ -1146,19 +1159,16 @@ Format: <code>unassignpolicy INDEX pol/POLICY NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Removes the policies to the person at the specified <code>INDEX</code>.</p>
+<p>The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The policy name refers to the name of the policy.</p>
 </li>
 <li>
-<p>The policy refers to the index number of the policy in the absolute list.</p>
+<p>A policy already unassigned cannot be unassigned again.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Each policy <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Each policy name must match the policy exactly as it appears in the absolute policy list.</p>
 </li>
 </ul>
 </div>
@@ -1183,7 +1193,7 @@ Removes the policy 'Health Insurance' in the absolute list from the 1st person i
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-tags-from-a-person-code-deletetag-code"><a class="link" href="#deleting-tags-from-a-person-code-deletetag-code">4.27. Deleting tags from a person : <code>deletetag</code></a></h3>
+<h3 id="deleting-tags-from-a-person-code-deletetag-code"><a class="link" href="#deleting-tags-from-a-person-code-deletetag-code">4.26. Deleting tags from a person : <code>deletetag</code></a></h3>
 <div class="paragraph">
 <p>Deletes tag(s) from the person at the specified index.<br>
 Format: <code>deletetag INDEX t/TAG [MORE_TAGS]</code></p>
@@ -1227,7 +1237,7 @@ Deletes a <code>high_risk</code> tag from the 1st person in the results of the <
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-tags-from-a-policy-code-deletepolicytag-code"><a class="link" href="#deleting-tags-from-a-policy-code-deletepolicytag-code">4.28. Deleting tags from a policy : <code>deletepolicytag</code></a></h3>
+<h3 id="deleting-tags-from-a-policy-code-deletepolicytag-code"><a class="link" href="#deleting-tags-from-a-policy-code-deletepolicytag-code">4.27. Deleting tags from a policy : <code>deletepolicytag</code></a></h3>
 <div class="paragraph">
 <p>Deletes tag(s) from the policy at the specified index.<br>
 Format: <code>deletepolicytag INDEX t/TAG [MORE_TAGS]</code></p>
@@ -1271,14 +1281,14 @@ Deletes a <code>high_risk</code> tag from the 1st policy in the results of the <
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.29. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.28. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book, including the bin.+
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="incorrect-nric-alert"><a class="link" href="#incorrect-nric-alert">4.30. Incorrect NRIC Alert</a></h3>
+<h3 id="incorrect-nric-alert"><a class="link" href="#incorrect-nric-alert">4.29. Incorrect NRIC Alert</a></h3>
 <div class="paragraph">
 <p>Returns an error message to inform the user of an invalid NRIC. The contact number and/or email address is returned
 if present.</p>
@@ -1303,7 +1313,7 @@ EMAIL: johnd@example.com`</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="incorrect-contact-number-alert"><a class="link" href="#incorrect-contact-number-alert">4.31. Incorrect Contact Number Alert</a></h3>
+<h3 id="incorrect-contact-number-alert"><a class="link" href="#incorrect-contact-number-alert">4.30. Incorrect Contact Number Alert</a></h3>
 <div class="paragraph">
 <p>Returns an error message to inform the user of an invalid contact number. The email address is returned
 if present.</p>
@@ -1326,7 +1336,7 @@ EMAIL: johnd@example.com</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="incorrect-email-address-alert"><a class="link" href="#incorrect-email-address-alert">4.32. Incorrect Email Address Alert</a></h3>
+<h3 id="incorrect-email-address-alert"><a class="link" href="#incorrect-email-address-alert">4.31. Incorrect Email Address Alert</a></h3>
 <div class="paragraph">
 <p>Returns an error message to inform the user of an invalid email address. The phone number is returned
 if present.</p>
@@ -1354,7 +1364,7 @@ PHONE: 98765432</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="incorrect-command-suggestions"><a class="link" href="#incorrect-command-suggestions">4.33. Incorrect Command Suggestions</a></h3>
+<h3 id="incorrect-command-suggestions"><a class="link" href="#incorrect-command-suggestions">4.32. Incorrect Command Suggestions</a></h3>
 <div class="paragraph">
 <p>Returns an error message and a suggestion of a correct command when a command is typed incorrectly.</p>
 </div>
@@ -1377,7 +1387,7 @@ PHONE: 98765432</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="turning-command-suggestions-on-and-off"><a class="link" href="#turning-command-suggestions-on-and-off">4.34. Turning Command Suggestions On and off</a></h3>
+<h3 id="turning-command-suggestions-on-and-off-code-suggestion-code"><a class="link" href="#turning-command-suggestions-on-and-off-code-suggestion-code">4.33. Turning Command Suggestions On and off : <code>suggestion</code></a></h3>
 <div class="paragraph">
 <p>Switches suggestions for invalid commands on or off.</p>
 </div>
@@ -1401,7 +1411,7 @@ PHONE: 98765432</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="duplicate-profile-alert"><a class="link" href="#duplicate-profile-alert">4.35. Duplicate profile alert</a></h3>
+<h3 id="duplicate-profile-alert"><a class="link" href="#duplicate-profile-alert">4.34. Duplicate profile alert</a></h3>
 <div class="paragraph">
 <p>Returns an error message of an existing person and will attempt to merge the profiles.
 For each different attribute, there will be a prompt to suggest a change from the original attribute to the new one.</p>
@@ -1443,7 +1453,7 @@ Please press enter or 'yes' to proceed or 'no' to skip.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">4.36. Display Indicator: <code>display</code></a></h3>
+<h3 id="display-indicator-code-display-code"><a class="link" href="#display-indicator-code-display-code">4.35. Display Indicator: <code>display</code></a></h3>
 <div class="paragraph">
 <p>Displays indicator according to specified format.</p>
 </div>
@@ -1544,7 +1554,7 @@ Displays gender breakdown as a linechart.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="restore-deleted-items-code-restore-code"><a class="link" href="#restore-deleted-items-code-restore-code">4.37. Restore Deleted Items: <code>restore</code></a></h3>
+<h3 id="restore-deleted-items-code-restore-code"><a class="link" href="#restore-deleted-items-code-restore-code">4.36. Restore Deleted Items: <code>restore</code></a></h3>
 <div class="paragraph">
 <p>Restores an item (person or policy) in the bin specified by the user.</p>
 </div>
@@ -1589,7 +1599,7 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="binitemexpiry"><a class="link" href="#binitemexpiry">4.38. Set expiry time of bin items: <code>binitemexpiry</code></a></h3>
+<h3 id="binitemexpiry"><a class="link" href="#binitemexpiry">4.37. Set expiry time of bin items: <code>binitemexpiry</code></a></h3>
 <div class="paragraph">
 <p>User can set the amount of time bin items stay in the bin before they are permanently removed.</p>
 </div>
@@ -1652,15 +1662,12 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-recently-entered-commands"><a class="link" href="#undo-recently-entered-commands">4.39. Undo recently entered commands</a></h3>
+<h3 id="undo-recently-entered-commands-code-undo-code"><a class="link" href="#undo-recently-entered-commands-code-undo-code">4.38. Undo recently entered commands : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>User can simply enter the command <code>undo</code> to undo the most recent address book change.</p>
+<p>User can simply enter the command <code>undo</code> to undo the most recent address book data change.</p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>undo</code></p>
+<p>Format: <code>undo</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1670,17 +1677,27 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 <pre class="CodeRay highlight"><code>An undo has been performed!</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An undo does not work for commands which do not make a change in the address book data (like <code>listpeople</code> for instance).
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="redo-recently-undone-commands"><a class="link" href="#redo-recently-undone-commands">4.40. Redo recently undone commands</a></h3>
+<h3 id="redo-recently-undone-commands-code-redo-code"><a class="link" href="#redo-recently-undone-commands-code-redo-code">4.39. Redo recently undone commands : <code>redo</code></a></h3>
 <div class="paragraph">
-<p>User can simply enter the command <code>redo</code> to redo the most recent undone address book change.</p>
+<p>User can simply enter the command <code>redo</code> to redo the most recent address book data change. A redo is possible only when
+an undo has been previously performed.</p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p><code>redo</code></p>
+<p>Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -1690,36 +1707,91 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 <pre class="CodeRay highlight"><code>A redo has been performed!</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A redo does not work for commands which do not make a change in the address book data (like <code>listpeople</code> for instance).
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.41. Exiting the program : <code>exit</code></a></h3>
+<h3 id="listing-command-history-code-history-code"><a class="link" href="#listing-command-history-code-history-code">4.40. Listing command history : <code>history</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all previously entered (valid) commands in the right panel. Commands entered during the merging
+period are not included. <code>history</code> itself is taken as a valid command too.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>history</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt; listpeople
+&gt;&gt; listpolicy
+&gt;&gt; assignpolicy 1 pol/Motor Insurance
+&gt;&gt; undo
+&gt;&gt; delete 2
+&gt;&gt; history</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/HistoryCommandExample.png" alt="HistoryCommandExample">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="navigating-command-history-by-pressing-up-down-keys"><a class="link" href="#navigating-command-history-by-pressing-up-down-keys">4.41. Navigating command history by pressing up/down keys</a></h3>
+<div class="paragraph">
+<p>Previously entered commands can be navigated in the <code>CommandBox</code> without explicity entering them by pressing
+UP/DOWN keyboard keys. This is different from the above mentioned <code>history</code> command, since it also displays commands
+entered which were invalid.</p>
+</div>
+<div class="paragraph">
+<p>Format: No command, simply press up/down keyboard keys.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.42. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.42. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.43. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.43. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.44. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code"><a class="link" href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">4.44. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></h3>
+<h3 id="policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code"><a class="link" href="#policy-suggestions-for-invalid-policy-assignments-code-coming-in-v2-0-code">4.45. Policy suggestions for invalid policy assignments <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>A list of policies that a person is eligible for will be shown if the user attempts to assign a policy to someone who is
 ineligible for it.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="suggestions-while-typing-code-coming-in-v2-0-code"><a class="link" href="#suggestions-while-typing-code-coming-in-v2-0-code">4.45. Suggestions while typing <code>[coming in v2.0]</code></a></h3>
+<h3 id="suggestions-while-typing-code-coming-in-v2-0-code"><a class="link" href="#suggestions-while-typing-code-coming-in-v2-0-code">4.46. Suggestions while typing <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p>Suggestions of correct command words will be listed immediately once an incorrect command word is detected.</p>
 </div>
@@ -1756,9 +1828,6 @@ e.g. <code>add pol n/SeniorCare d/care for seniors c/months/10 pr/$50000 [sa/50 
 </li>
 <li>
 <p><strong>List Bin Items</strong> : <code>listbin</code></p>
-</li>
-<li>
-<p><strong>List Command History</strong>: <code>history</code></p>
 </li>
 <li>
 <p><strong>Edit Person</strong> : <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH]</code><br>
@@ -1833,10 +1902,13 @@ e.g. <code>expandpolicy 1</code></p>
 e.g. <code>display i/policy-popularity-breakdown f/piechart</code></p>
 </li>
 <li>
-<p><strong>Undo the most recent command</strong>: <code>undo</code></p>
+<p><strong>List Command History</strong>: <code>history</code></p>
 </li>
 <li>
-<p><strong>Redo the most recent undone command</strong>: <code>redo</code></p>
+<p><strong>Undo the most recent data change</strong>: <code>undo</code></p>
+</li>
+<li>
+<p><strong>Redo the most recent data change</strong>: <code>redo</code></p>
 </li>
 <li>
 <p><strong>Set expiry time of bin items</strong>: <code>binitemexpiry</code><br>
@@ -1851,4 +1923,4 @@ e.g. <code>binitemexpiry days/30</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-08 04:47:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 01:38:52 UTC</div></div></div></body></html>
