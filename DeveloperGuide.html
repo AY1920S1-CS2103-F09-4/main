@@ -46,6 +46,7 @@
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
 <li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#displaying-indicators">G.4. Displaying indicators</a></li>
 </ul>
 </li>
 </ul>
@@ -1968,5 +1969,38 @@ Expected: Similar to previous.</p>
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="displaying-indicators"><a class="link" href="#displaying-indicators">G.4. Displaying indicators</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Indicators are up to date and shown in the correct format</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case:<br>
+ <code>display i/policy-popularity-breakdown f/piechart</code><br>
+ <code>addpolicy n/Child Care d/Care for children c/days/20 months/11 years/5 pr/$50000 sa/0 ea/10</code><br>
+Expected: Popularity of child care policy should be 0. Format of indicator should be piechart.</p>
+</li>
+<li>
+<p>Test case:<br>
+    <code>display i/age-group-breakdown f/linechart</code><br>
+    <code>add n/Norman ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Male</code><br>
+   Expected: Number of people in the age group below 20 years old should increase by 1.
+Format of indicator should be linechart.</p>
+</li>
+<li>
+<p>Test case:<br>
+ <code>display i/gender-breakdown f/barchart</code><br>
+ <code>add n/Sally ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Female</code><br>
+Expected: Number of females should increase by 1. Format of indicator should be barchart.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 04:21:17 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 10:00:55 UTC</div></div></div></body></html>
