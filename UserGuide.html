@@ -92,7 +92,7 @@ Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#82
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="{https://github.com/AY1920S1-CS2103-F09-4/main/releases">here</a>.</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/AY1920S1-CS2103-F09-4/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -148,14 +148,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Insurelytics is a Command Line Interface (CLI) application for insurance agents like yourself to manage your contacts and policies. Here is a quick tutorial to help you get started using the application!</p>
 </div>
 <div class="paragraph">
-<p>You can use Insurelytics to manage two different kinds of data: <strong>contacts</strong> and <strong>policies</strong>. The formats in which these types of data are stored are as follows:</p>
+<p>You can use Insurelytics to manage two different kinds of data: <strong>persons</strong> and <strong>policies</strong>. The formats in which these
+types of data are stored are as follows:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Contact:</p>
+<p>Person:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -229,7 +230,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s add a contact and view his details.</p>
+<p>These two sets of data are displayed on the two main pages of our application, the person page and the policy page.
+They can be accessed via their respective display commands <code>listpeople</code> and <code>listpolicy</code>.</p>
+</div>
+<div class="paragraph">
+<p>First, let&#8217;s navigate to the person page and add a contact.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -238,7 +243,7 @@ add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 
 </div>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s add a policy.</p>
+<p>Then, let&#8217;s navigate to the policy page and add a policy.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -247,7 +252,7 @@ addpolicy n/Senior Care d/Care for seniors c/days/20 months/11 years/5 pr/$50000
 </div>
 </div>
 <div class="paragraph">
-<p>Once stored, contacts can be <code>assign</code>-ed policies that they are eligible for. A contact is eligible for a policy if
+<p>Persons can be <code>assign</code>-ed policies that they are eligible for. A person is eligible for a policy if
 he/she falls in the specified age range and possesses all the policy&#8217;s specified criteria (in his/her tags).</p>
 </div>
 <div class="listingblock">
@@ -255,13 +260,41 @@ he/she falls in the specified age range and possesses all the policy&#8217;s spe
 <pre class="CodeRay highlight"><code>assignpolicy 1 pol/Life Insurance</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+One of our design features is to allow users to use person-related commands on the policy page and vice versa (as with
+the example above).
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Contacts and policies can easily be retrieved using the various <code>find</code> functions, whether by <strong>keyword</strong> or by <strong>tag</strong>.</p>
+<p>Persons and policies can easily be retrieved using the various <code>find</code> functions, whether by <strong>keyword</strong> or by <strong>tag</strong>.
+Let&#8217;s find a person and add a "senior" tag to the person.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>find John</code></pre>
+<pre class="CodeRay highlight"><code>find John
+addtag 1 t/senior</code></pre>
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Note that the index of <code>addtag</code> refers to the resulting list from the previous <code>find</code> command. Indices of persons
+are always based off the latest view of the person page. The same applies for policies.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The various functions outlined in the following section are available to further help the user manage contacts and policies.
@@ -1049,7 +1082,7 @@ permanently. This default value can be changed with the <a href="#binitemexpiry"
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+Expired items are removed on restart of application.
 </td>
 </tr>
 </table>
@@ -1057,19 +1090,45 @@ Deleted items will expire in 10 seconds for testing purposes. Expired items are 
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the list of people.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Delete the 2nd person in the list of people.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt;&gt; listpeople
+&gt;&gt;&gt; delete 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Person: Benson Meier
+NRIC: S0000002J; Phone: 98765432; Email: johnd@example.com; Address: 311, Clementi Ave 2, #02-25; Date of Birth: 12 December 1922; Gender: Male
+Policies: [Life Insurance]
+Tags: [smoker][disabled]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete the 1st person in the results of the <code>find</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt;&gt; find carl
+&gt;&gt;&gt; delete 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Person: Carl Kurz
+NRIC: S0000003J; Phone: 95352563; Email: heinz@example.com; Address: wall street; Date of Birth: 6 June 1996; Gender: Male</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1106,7 +1165,7 @@ permanently. This default value can be changed with the <a href="#binitemexpiry"
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+Expired items are removed on restart of application.
 </td>
 </tr>
 </table>
@@ -1114,19 +1173,45 @@ Deleted items will expire in 10 seconds for testing purposes. Expired items are 
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>listpolicy</code><br>
-<code>deletepolicy 2</code><br>
-Deletes the 2nd policy in the list of policies.</p>
-</li>
-<li>
-<p><code>findpolicy senior</code><br>
-<code>deletepolicy 1</code><br>
-Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Deletes the 2nd policy in the list of policies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands:
+&gt;&gt;&gt; listpolicy
+&gt;&gt;&gt; deletepolicy 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Policy: Life Insurance
+Description: Insurance for life; Coverage: 50 years, 0 months, 0 days; Price: $1000000; Start Age: 21; End Age: 80
+Criteria: [high blood pressure]
+Tags: [term insurance]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands:
+&gt;&gt;&gt; findpolicy senior
+&gt;&gt;&gt; deletepolicy 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Policy: Senior Care
+Description: Care for seniors; Coverage: 5 years, 11 months, 20 days; Price: $50000; Start Age: 50; End Age: 75</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1951,4 +2036,4 @@ e.g. <code>binitemexpiry days/30</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 02:51:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 04:21:17 UTC</div></div></div></body></html>

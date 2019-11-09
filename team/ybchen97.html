@@ -170,7 +170,7 @@ permanently. This default value can be changed with the <a href="#binitemexpiry"
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+Expired items are removed on restart of application.
 </td>
 </tr>
 </table>
@@ -178,19 +178,45 @@ Deleted items will expire in 10 seconds for testing purposes. Expired items are 
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the list of people.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Delete the 2nd person in the list of people.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt;&gt; listpeople
+&gt;&gt;&gt; delete 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Person: Benson Meier
+NRIC: S0000002J; Phone: 98765432; Email: johnd@example.com; Address: 311, Clementi Ave 2, #02-25; Date of Birth: 12 December 1922; Gender: Male
+Policies: [Life Insurance]
+Tags: [smoker][disabled]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delete the 1st person in the results of the <code>find</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt;&gt; find carl
+&gt;&gt;&gt; delete 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Person: Carl Kurz
+NRIC: S0000003J; Phone: 95352563; Email: heinz@example.com; Address: wall street; Date of Birth: 6 June 1996; Gender: Male</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -227,7 +253,7 @@ permanently. This default value can be changed with the <a href="#binitemexpiry"
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Deleted items will expire in 10 seconds for testing purposes. Expired items are removed on restart of application.
+Expired items are removed on restart of application.
 </td>
 </tr>
 </table>
@@ -235,19 +261,45 @@ Deleted items will expire in 10 seconds for testing purposes. Expired items are 
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>listpolicy</code><br>
-<code>deletepolicy 2</code><br>
-Deletes the 2nd policy in the list of policies.</p>
-</li>
-<li>
-<p><code>findpolicy senior</code><br>
-<code>deletepolicy 1</code><br>
-Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Deletes the 2nd policy in the list of policies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands:
+&gt;&gt;&gt; listpolicy
+&gt;&gt;&gt; deletepolicy 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Policy: Life Insurance
+Description: Insurance for life; Coverage: 50 years, 0 months, 0 days; Price: $1000000; Start Age: 21; End Age: 80
+Criteria: [high blood pressure]
+Tags: [term insurance]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deletes the 1st policy in the results of the <code>findpolicy</code> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands:
+&gt;&gt;&gt; findpolicy senior
+&gt;&gt;&gt; deletepolicy 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Deleted Policy: Senior Care
+Description: Care for seniors; Coverage: 5 years, 11 months, 20 days; Price: $50000; Start Age: 50; End Age: 75</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -652,4 +704,4 @@ Violates Single Responsibility Principle and Separation of Concerns as HistoryMa
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 02:51:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 04:21:17 UTC</div></div></div></body></html>
