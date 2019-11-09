@@ -92,7 +92,7 @@ Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#82
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="{https://github.com/AY1920S1-CS2103-F09-4/main/releases}/releases">here</a>.</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="{https://github.com/AY1920S1-CS2103-F09-4/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -229,12 +229,39 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="paragraph">
-<p>To add new contacts or policies, you can use the <code>add</code> or <code>addpolicy</code> functions described in <a href="#Features">Section 4, &#8220;Features&#8221;</a>.
-Once stored, contacts can be <code>assign</code>-ed policies that they are eligible for. A contact is eligible for a policy if
+<p>Let&#8217;s add a contact and view his details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>listpeople
+add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/Male</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s add a policy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>listpolicy
+addpolicy n/Senior Care d/Care for seniors c/days/20 months/11 years/5 pr/$50000 sa/50 ea/75</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once stored, contacts can be <code>assign</code>-ed policies that they are eligible for. A contact is eligible for a policy if
 he/she falls in the specified age range and possesses all the policy&#8217;s specified criteria (in his/her tags).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>assignpolicy 1 pol/Life Insurance</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Contacts and policies can easily be retrieved using the various <code>find</code> functions, whether by <strong>keyword</strong> or by <strong>tag</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>find John</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>The various functions outlined in the following section are available to further help the user manage contacts and policies.
@@ -361,7 +388,7 @@ Maximum value of <code>START_AGE</code> and <code>END_AGE</code> is 120.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addpolicy n/SeniorCare d/Care for seniors c/days/20 months/11 years/5 pr/$50000 sa/50 ea/75</code></p>
+<p><code>addpolicy n/Senior Care d/Care for seniors c/days/20 months/11 years/5 pr/$50000 sa/50 ea/75</code></p>
 </li>
 </ul>
 </div>
@@ -370,7 +397,7 @@ Maximum value of <code>START_AGE</code> and <code>END_AGE</code> is 120.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>New policy added: Seniorcare Description: Care for seniors Coverage: days/20 months/11 years/5 Price: $50000 Start Age: 50 End Age: 75</code></pre>
+<pre class="CodeRay highlight"><code>New policy added: Senior care Description: Care for seniors Coverage: days/20 months/11 years/5 Price: $50000 Start Age: 50 End Age: 75</code></pre>
 </div>
 </div>
 </div>
@@ -844,8 +871,9 @@ Format: <code>addtag INDEX t/TAG [MORE_TAGS]</code></p>
 <ul>
 <li>
 <p><code>listpeople</code><br>
-<code>addtag 2 t/high_priority</code><br>
-Adds a <code>high_priority</code> tag to the 2nd person in the list of people.</p>
+<code>addtag 2 t/high blood pressure</code><br>
+Adds a <code>high blood pressure</code> tag to the 2nd person in the list of people. This tag will determine the person&#8217;s
+eligibility for policy.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
@@ -1923,4 +1951,4 @@ e.g. <code>binitemexpiry days/30</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 02:28:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 02:51:24 UTC</div></div></div></body></html>
