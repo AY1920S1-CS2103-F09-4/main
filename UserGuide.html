@@ -126,7 +126,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>listpolicy</code></strong> : lists all policies</p>
 </li>
 <li>
-<p><code>add pol n/SeniorCare d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code>: adds policy</p>
+<p><code>addpolicy n/Senior Care d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code>: adds policy</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -1696,10 +1696,14 @@ Displays gender breakdown as a linechart.</p>
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>restore 1</code><br></p>
-</div>
-<div class="paragraph">
 <p>Restores first index of the list of bin items.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt;&gt; listbin
+&gt;&gt;&gt; restore 1</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Expected Output:<br></p>
@@ -1931,7 +1935,7 @@ e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John str
 </li>
 <li>
 <p><strong>Add Policy</strong> <code>addpolicy  addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]  pr/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203;</code><br>
-e.g. <code>add pol n/SeniorCare d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code></p>
+e.g. <code>addpolicy n/Senior Care d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code></p>
 </li>
 <li>
 <p><strong>List People</strong> : <code>listpeople</code></p>
@@ -2033,7 +2037,10 @@ e.g. <code>binitemexpiry days/30</code></p>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
+</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 10:00:55 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-09 17:53:38 UTC</div></div></div></body></html>
