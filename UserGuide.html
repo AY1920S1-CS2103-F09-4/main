@@ -655,10 +655,10 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>Only the name is searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>Partially-matching keywords will be matched e.g. <code>Han</code> will match <code>Hans</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code>.</p>
 </li>
 </ul>
 </div>
@@ -697,10 +697,10 @@ Format: <code>findpolicy KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The order of the keywords does not matter. e.g. <code>Senior Care</code> will match <code>Care Seniors</code></p>
 </li>
 <li>
-<p>Partially-matching words will be matched e.g. <code>Senior</code> will match <code>Seniors</code></p>
+<p>Partially-matching keywords will be matched e.g. <code>Senior</code> will match <code>Seniors</code></p>
 </li>
 <li>
-<p>Policies matching at least one keyword will be returned (i.e. <code>OR</code> search).</p>
+<p>Policies matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Senior Life</code> will return <code>Life Insurance</code>, <code>Senior Insurance</code>.</p>
 </li>
 </ul>
 </div>
@@ -1975,12 +1975,24 @@ e.g. <code>find James Jake</code></p>
 e.g. <code>findpolicy senior</code></p>
 </li>
 <li>
-<p><strong>Find people by tags</strong>: <code>findtagpeople TAG [MORE_TAGS]</code><br>
+<p><strong>Find People by Tags</strong>: <code>findtagpeople TAG [MORE_TAGS]</code><br>
 e.g. <code>findtagpeople smoker diabetic</code></p>
 </li>
 <li>
-<p><strong>Find policy by tags</strong>: <code>findtagpolicy TAG [MORE_TAGS]</code><br>
+<p><strong>Find Policy by Tags</strong>: <code>findtagpolicy TAG [MORE_TAGS]</code><br>
 e.g. <code>findtagpolicy accident life</code></p>
+</li>
+<li>
+<p><strong>Find Policyholders</strong>: <code>findpolicyholders INDEX</code><br>
+e.g. <code>findpolicyholders 4</code></p>
+</li>
+<li>
+<p><strong>Find Eligible People by Policy</strong>: <code>eligiblepeople INDEX</code><br>
+e.g. <code>eligiblepeople 5</code></p>
+</li>
+<li>
+<p><strong>Find Eligible Policies by Person</strong>: <code>eligiblepolicies INDEX</code><br>
+e.g. <code>eligiblepolicies 3</code></p>
 </li>
 <li>
 <p><strong>Assign Policy</strong> : <code>assignpolicy INDEX pol/POLICY NAME</code><br>
@@ -1993,6 +2005,14 @@ e.g. <code>addtag 3 t/high_priority</code></p>
 <li>
 <p><strong>Add Tag To Policy</strong> : <code>addpolicytag INDEX t/TAG [MORE_TAGS]</code><br>
 e.g. <code>addpolicytag 2 t/lifeinsurance</code></p>
+</li>
+<li>
+<p><strong>Add Criteria to Policy</strong> : <code>addcriteria INDEX cr/CRITERIA [MORE_CRITERIA]</code><br>
+e.g. <code>addcriteria 2 cr/nonsmoker</code></p>
+</li>
+<li>
+<p><strong>Delete Criteria from Policy</strong> : <code>addcriteria INDEX cr/CRITERIA [MORE_CRITERIA]</code><br>
+e.g. <code>deletecriteria 2 cr/nonsmoker</code></p>
 </li>
 <li>
 <p><strong>Delete Person</strong> : <code>delete INDEX</code><br>
@@ -2055,4 +2075,4 @@ e.g. <code>binitemexpiry days/30</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:03:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 12:33:45 UTC</div></div></div></body></html>
