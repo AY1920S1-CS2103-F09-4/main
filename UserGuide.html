@@ -1246,19 +1246,19 @@ Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>listpeople</code><br>
-<code>assignpolicy 2 pol/Senior Care</code><br>
-Assigns the 'Senior Care' (the second policy in the list) policy to the 2nd person in the list of people.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>assignpolicy 1 pol/Accident Insurance</code><br>
-Assigns the 'Accident Insurance' (the first policy in the list) policy to the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>`find Betsy`
+`assignpolicy 1 pol/Accident Insurance`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Assigned Policy: Accident Insurance to Person: Betsy Kumar</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1290,19 +1290,19 @@ Format: <code>unassignpolicy INDEX pol/POLICY NAME</code></p>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>listpeople</code><br>
-<code>unassignpolicy 2 pol/Accident Insurance</code><br>
-Removes the policy 'Accident Insurance' in the absolute list from the 2nd person in the displayed list of people.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>unassignpolicy 1 pol/Health insurance</code><br>
-Removes the policy 'Health Insurance' in the absolute list from the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>`find Betsy`
+`unassignpolicy 1 pol/Accident Insurance`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Unssigned Policy: Accident Insurance from Person: Betsy Kumar</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1718,7 +1718,7 @@ Displays gender breakdown as a linechart.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Expected Output:<br></p>
+<p>Expected Output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1776,13 +1776,13 @@ Date of birth: 5 March 1980 Gender: Male Date deleted: 22 Oct 2019 at 09:57 PM E
 <p>Example:</p>
 </div>
 <div class="paragraph">
-<p><code>binitemexpiry days/30</code><br></p>
+<p><code>binitemexpiry days/30</code></p>
 </div>
 <div class="paragraph">
 <p>Set all BinItems to expire 30 days their deletion. They will be removed permanently once they exceed their expiry date.</p>
 </div>
 <div class="paragraph">
-<p>Expected Output:<br></p>
+<p>Expected Output:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1946,8 +1946,8 @@ ineligible for it.</p>
 e.g. <code>add n/John Doe ic/S9999999J p/98765432 e/johnd@example.com a/John street, block 123, #01-01 dob/12.09.1980 g/MALE</code></p>
 </li>
 <li>
-<p><strong>Add Policy</strong> <code>addpolicy  addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID]  pr/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203;</code><br>
-e.g. <code>addpolicy n/Senior Care d/care for seniors c/months/10 pr/$50000 [sa/50 ea/75]</code></p>
+<p><strong>Add Policy</strong> <code>addpolicy n/NAME d/DESCRIPTION c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] pr/PRICE [sa/START_AGE] [ea/END_AGE]&#8230;&#8203;</code><br>
+e.g. <code>addpolicy n/Senior Care d/care for seniors c/months/10 pr/$50000 sa/50 ea/75</code></p>
 </li>
 <li>
 <p><strong>List People</strong> : <code>listpeople</code></p>
@@ -1963,7 +1963,7 @@ e.g. <code>addpolicy n/Senior Care d/care for seniors c/months/10 pr/$50000 [sa/
 e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
-<p><strong>Edit Policy</strong> : <code>edit INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] ] [pr/PRICE]</code><br>
+<p><strong>Edit Policy</strong> : <code>editpolicy INDEX [n/NAME] [d/DESCRIPTION] [c/[days/DAYS_VALID][months/MONTHS_VALID][years/YEARS_VALID] ] [pr/PRICE]</code><br>
 e.g. <code>editpolicy 1 n/Seniors</code></p>
 </li>
 <li>
@@ -2055,4 +2055,4 @@ e.g. <code>binitemexpiry days/30</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:38:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:03:10 UTC</div></div></div></body></html>

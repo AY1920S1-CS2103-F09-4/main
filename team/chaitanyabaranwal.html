@@ -1,16 +1,23 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Chaitanya Baranwal - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Insurelytics</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://nus-cs2103-ay1920s1.github.io/insurelytics/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Chaitanya Baranwal - Project Portfolio</h1></div><div id="content"><div class="sect1">
-<h2 id="project-addressbook-level-3"><a class="link" href="#project-addressbook-level-3">PROJECT: AddressBook - Level 3</a></h2>
+<h2 id="project-insurelytics"><a class="link" href="#project-insurelytics">PROJECT: Insurelytics</a></h2>
 <div class="sectionbody">
 <hr>
+<div class="imageblock">
+<div class="content">
+<img src="../images/InsurelyticsLogo.png" alt="InsurelyticsLogo" width="250">
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 3 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>Insurelytics is a desktop client management application for insurance agents.
+Insurelytics facilitates the tracking of client and policies, and also generate statistical analytics to provide insights for the agent.
+The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 85 kLoC.</p>
 </div>
 </div>
 </div>
@@ -20,53 +27,106 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous data changes, and view previous history of commands</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p><strong>What it does:</strong> The features relating to this enhancement can be divided into two components:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Undo/redo previous data changes</strong>: Allows the user to undo/redo any data changes made to the insurance data in the
+current session.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
-</li>
-<li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p><strong>View a history of previously entered valid commands</strong>: Allows the user to view a history of previously entered
+valid commands.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Justification:</strong> A user can make mistakes in commands and the app should provide a convenient way to rectify them.
+Given the sensitivity and size of data handled by a single insurance agent, it is quite possible to mistakenly enter erroneous data.
+The <code>history</code> command is also very useful, since the user would often want to see the previously entered commands to note the changes he/she made.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Highlights:</strong> This enhancement affects existing commands and commands to be added in future. The implementation too was challenging
+as it required changes to existing commands and key components like <code>ModelManager</code> and <code>LogicManager</code>, as well as implementation
+of completely new components.</p>
+</li>
+<li>
+<p><strong>Credits:</strong> The code for <code>StatefulAddressBook.java</code> is adapted from <a href="https://github.com/se-edu/addressbook-level4">this repo</a>,
+although I made sure that I completely understood the implementation and wrote the code for this application myself. The
+<code>history</code> command did not use any previously existing code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added a functionality that allows the user to navigate to previous commands using up/down keys.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Different from the <code>history</code> command, because this stores the entered commands in a separate list, and provides all commands
+entered regardless of whether they were valid or not. The idea is to provide incorrectly entered commands so that the user
+can quickly navigate to that command and perform the required changes to enter the correct command.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=chaitanyabaranwal&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">tP Dashboard</a></p>
+</li>
+<li>
+<p><strong>Functional Code contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Model: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/model/StatefulAddressBook.java">StatefulAddressBook</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/model/CommandHistory.java">CommandHistory</a>]</p>
+</li>
+<li>
+<p>UI: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/resources/view/HistoryListCard.fxml">HistoryListCard</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/ui/HistoryListPanel.java">HistoryListPanel</a>]</p>
+</li>
+<li>
+<p>Commands: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/logic/commands/UndoCommand.java">UndoCommand</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/logic/commands/RedoCommand.java">RedoCommand</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/main/java/seedu/address/logic/commands/HistoryCommand.java">HistoryCommand</a>]
+and their parsers</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Test Code Contributed</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Model: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/model/StatefulAddressBookTest.java">StatefulAddressBookTest</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/model/CommandHistoryTest.java">CommandHistoryTest</a>]</p>
+</li>
+<li>
+<p>Commands: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/logic/commands/UndoCommandTest.java">UndoCommandTest</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/logic/commands/RedoCommandTest.java">RedoCommandTest</a>]
+[<a href="https://github.com/AY1920S1-CS2103-F09-4/main/blob/master/src/test/java/seedu/address/logic/commands/HistoryCommandTest.java">HistoryCommandTest</a>]
+[&#8230;&#8203; other tests added to <code>ModelManager</code>, <code>LogicManager</code> and <code>AddressBookParser</code>]</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Added commands (complete with tests) for assigning and unassigning policies (Pull requests
+<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/88">#88</a> and <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/94">#94</a>).</p>
 </li>
 </ul>
 </div>
@@ -76,7 +136,8 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated the existing Developer Guide diagrams to reflect the new application and models
+<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/127/commits/90e39d9f0803ae6e828460a09f94b96e5198b7ee">#127</a></p>
 </li>
 </ul>
 </div>
@@ -86,29 +147,9 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
-</li>
-<li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/95">#95</a>,
+<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/196">#196</a>, <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/132">#132</a>,
+<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/228">#228</a></p>
 </li>
 </ul>
 </div>
@@ -117,9 +158,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -137,9 +175,199 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Edits an existing person in the address book.<br>
+Format: <code>edit INDEX [n/NAME] [ic/NRIC] [p/PHONE] [e/EMAIL] [a/ADDRESS] [dob/DATE_OF_BIRTH] [g/GENDER]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>If editing a person&#8217;s details results in him being ineligible for a policy/multiple policies he currently possesses, they will be unassigned from him.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To edit tags, use <code>addTag</code> or <code>deleteTag</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>edit 1 p/91234567 e/johndoe@example.com</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Considering the first person is <code>Alex Yeoh</code>, sample output is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Edited Person: Alex Yeoh
+NRIC: S0000001A; Phone: 91234567; Email: johndoe@example.com; Address: Blk 30 Geylang Street 29, #06-40; Date of Birth: 12 December 1998; Gender: Male
+Policies: [Teenage]
+Tags: [diabetic]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-policies-to-a-person-code-assignpolicy-code"><a class="link" href="#adding-policies-to-a-person-code-assignpolicy-code">Adding policies to a person : <code>assignpolicy</code></a></h3>
+<div class="paragraph">
+<p>Assigns a policy to the person at the specified index.<br>
+Format: <code>assignpolicy INDEX pol/POLICY NAME</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the displayed person list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The policy name refers to the name of the policy.</p>
+</li>
+<li>
+<p>A policy already assigned cannot be assigned again.</p>
+</li>
+<li>
+<p>Each policy name must match the policy exactly as it appears in the absolute policy list.</p>
+</li>
+<li>
+<p>Any number of policies can be added as long as the person is eligible for the policy.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>`find Betsy`
+`assignpolicy 1 pol/Accident Insurance`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Assigned Policy: Accident Insurance to Person: Betsy Kumar</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-recently-entered-commands-code-undo-code"><a class="link" href="#undo-recently-entered-commands-code-undo-code">Undo recently entered commands : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>User can simply enter the command <code>undo</code> to undo the most recent address book data change.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>undo</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>An undo has been performed!</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+An undo does not work for commands which do not make a change in the address book data (like <code>listpeople</code> for instance).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redo-recently-undone-commands-code-redo-code"><a class="link" href="#redo-recently-undone-commands-code-redo-code">Redo recently undone commands : <code>redo</code></a></h3>
+<div class="paragraph">
+<p>User can simply enter the command <code>redo</code> to redo the most recent address book data change. A redo is possible only when
+an undo has been previously performed.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>redo</code></p>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>A redo has been performed!</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A redo does not work for commands which do not make a change in the address book data (like <code>listpeople</code> for instance).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-command-history-code-history-code"><a class="link" href="#listing-command-history-code-history-code">Listing command history : <code>history</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all previously entered (valid) commands in the right panel. Commands entered during the merging
+period are not included. <code>history</code> itself is taken as a valid command too.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>history</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code># input commands
+&gt;&gt; listpeople
+&gt;&gt; listpolicy
+&gt;&gt; assignpolicy 1 pol/Motor Insurance
+&gt;&gt; undo
+&gt;&gt; delete 2
+&gt;&gt; history</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected Output:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/HistoryCommandExample.png" alt="HistoryCommandExample">
+</div>
 </div>
 </div>
 </div>
@@ -158,30 +386,123 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h3>
+<h3 id="command-history-feature"><a class="link" href="#command-history-feature">Command History Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>To allow users to revert/return to a previous/future state of the address book, an undo/redo mechanism is implemented, which
-undoes/redoes the last data change made in the application. This feature can be performed using the <code>undo</code> or <code>redo</code>
-command, and it performs an undo or a redo only when possible. The feature is supported by the <code>StatefulAddressBook</code> class,
-an instance of which is stored as one of the memory objects inside <code>ModelManager</code>. The main operations implemented by this class are:</p>
+<p>To allow users to view the list of previously entered commands, a command history mechanism is implemented, which
+lists down all the previous (valid) commands entered by the user from the point of starting the application. Commands entered
+while merging are not added. The feature is supported by the <code>CommandHistory</code> class, an instance of which is stored as one of the
+memory objects inside <code>ModelManager</code>. The main operations implemented by this class are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>StatefulAddressBook#saveAddressBookState()</code>&#8201;&#8212;&#8201;Adds an address book with the current state to the list <code>statefulAddressBookList</code>. Also
-clears states after the <code>currentStatePointer</code> and updates it by one.</p>
+<p><code>addCommand(commandWord, commandText)</code>&#8201;&#8212;&#8201;Adds the command with the command word <code>commandWord</code> and full command text
+<code>commandText</code> into the list of previously entered commands <code>userInputHistory</code>.</p>
 </li>
 <li>
-<p><code>StatefulAddressBook#undo()</code>&#8201;&#8212;&#8201;Reverts the <code>currentStatePointer</code> to the previous one, and resets the address book to use the one pointed
-by <code>currentStatePointer</code>.</p>
-</li>
-<li>
-<p><code>StatefulAddressBook#redo()</code>&#8201;&#8212;&#8201;Increments the <code>currentStatePointer</code> to the future one, and resets the address book to use the one pointed
-by <code>currentStatePointer</code>.</p>
+<p><code>getHistory()</code>&#8201;&#8212;&#8201;Reverses the list of previously entered commands and returns the list.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The history view is accompanied by its associated <code>HistoryCard</code> and <code>HistoryListPanel</code> FXML. These views share a common CSS
+with other FXML files.</p>
+</div>
+<div class="paragraph">
+<p>Following is the sequence diagram that shows the interaction between different components of the app when the command
+<code>history</code> is typed in by the user:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CommandHistorySequenceDiagram.png" alt="CommandHistorySequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-where-to-store-the-commandhistory-object"><a class="link" href="#aspect-where-to-store-the-commandhistory-object">Aspect: Where to store the CommandHistory object</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Place the <code>CommandHistory</code> object directly in the <code>LogicManager</code> class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Since the user input is being parsed in <code>LogicManager</code>, storing the command history ensures that data is
+not being passed around between the <code>LogicManager</code> and the <code>ModelManager</code>.</p>
+</li>
+<li>
+<p>Cons: By right the <code>LogicManager</code> is only concerned with handling logic, any data storage should be performed in
+<code>ModelManager</code>. Violates Single Responsibility Principle and Separation of Concerns.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Place the <code>CommandHistory</code> object in model manager, parse user input in
+<code>LogicManager</code> and pass it to <code>ModelManager</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Separation of concerns and Single Responsibility Principle for <code>LogicManager</code> and <code>ModelManager</code> is maintained.</p>
+</li>
+<li>
+<p>Cons: Increases coupling between <code>LogicManager</code> and <code>ModelManager</code>, thereby violating the Law of Demeter.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-which-commands-to-display-in-command-history"><a class="link" href="#aspect-which-commands-to-display-in-command-history">Aspect: Which commands to display in command history</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Display only those commands which will be relevant to user if she is considering undo/redo
+(therefore, display only data changes)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only commands which are more relevant shown to user.</p>
+</li>
+<li>
+<p>Cons: Which commands are relevant depends on the user, moreover limits the application of command history
+feature to undo/redo application.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Display every valid command entered by the user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More accurate representation of command history.</p>
+</li>
+<li>
+<p>Cons: Clutters the command history with potentially unnecessary commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<div class="paragraph">
+<p>To allow users to revert/return to a previous/future state of the address book, an undo/redo mechanism is implemented, which
+undoes/redoes the last data change made in the application. The feature is supported by the <code>StatefulAddressBook</code> class,
+an instance of which is stored as one of the memory objects inside <code>ModelManager</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -190,11 +511,6 @@ by <code>currentStatePointer</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo-redo mechanism works at each step. Let us assume that <code>StatefulAddressBook</code> has just been initialised.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
 </div>
 <div class="paragraph">
 <p>Step 1. The user makes some data changes. This adds a list of states to our <code>StatefulAddressBook</code>, and updates the
@@ -206,8 +522,7 @@ by <code>currentStatePointer</code>.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. User types <code>undo</code>. This invokes the <code>UndoCommand::execute</code> method, which further invokes the <code>StatefulAddressBook::undo</code>
-method. The <code>currentStatePointer</code> is decremented, and the address book is reset to the one being pointed to by
+<p>Step 2. User types <code>undo</code>. The <code>currentStatePointer</code> is decremented, and the address book is reset to the one being pointed to by
 <code>currentStatePointer</code>.</p>
 </div>
 <div class="imageblock">
@@ -225,16 +540,8 @@ and a new state is added.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3b. If a command which does not perform a data change is called, nothing happens in the <code>StatefulAddressBook</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState3b.png" alt="UndoRedoState3b">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3c. If a <code>redo()</code> is called, then the <code>currentStatePointer</code> is incremented, and the address book is reset to the one
-being pointed to by <code>currentStatePointer</code>.</p>
+<p>Step 3b. If a command which does not perform a data change is called, <code>StatefulAddressBook</code> stays the same
+as seen in <code>Step 2</code>. If a <code>redo()</code> is called, then the <code>currentStatePointer</code> is incremented.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -246,8 +553,7 @@ being pointed to by <code>currentStatePointer</code>.</p>
 the resulting changes now reflected.</p>
 </div>
 <div class="paragraph">
-<p>Following is an activity diagram which shows the execution when the user makes in a data change or types in the <code>undo</code>
-command. The diagram for a <code>redo</code> command will be similar.</p>
+<p>Following is the activity diagram. The diagram for a <code>redo</code> command will be similar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -256,7 +562,7 @@ command. The diagram for a <code>redo</code> command will be similar.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -304,59 +610,118 @@ when we try to undo a command.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
-developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both
-HistoryManager and VersionedAddressBook.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use HistoryManager (a history of commands) for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands.
-Violates Single Responsibility Principle and Separation of Concerns as HistoryManager now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
+<h3 id="use-case-edit-person" class="discrete">Use case: Edit person</h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p><strong>MSS</strong></p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>Insurelytics shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to edit a specific person in the list.</p>
+</li>
+<li>
+<p>Insurelytics edits the person.</p>
+</li>
+<li>
+<p>The person&#8217;s edited details are now visible in the address book.</p>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+</li>
+<li>
+<p>3b. The given edited details are invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3*1. Insurelytics shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-assigning-a-policy-to-a-person" class="discrete">Use case: Assigning a policy to a person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list persons.</p>
+</li>
+<li>
+<p>Insurelytics shows a list of persons.</p>
+</li>
+<li>
+<p>User requests to assign a policy to a specific person.</p>
+</li>
+<li>
+<p>The policy gets assigned to the person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+</li>
+<li>
+<p>3b. The person is not eligible for the policy.</p>
+</li>
+<li>
+<p>3c. The policy is not present in the global list of policies.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3*1. Insurelytics shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:38:49 UTC</div></div></div></body></html>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:03:10 UTC</div></div></div></body></html>

@@ -163,25 +163,8 @@
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
 <p>To allow users to revert/return to a previous/future state of the address book, an undo/redo mechanism is implemented, which
-undoes/redoes the last data change made in the application. This feature can be performed using the <code>undo</code> or <code>redo</code>
-command, and it performs an undo or a redo only when possible. The feature is supported by the <code>StatefulAddressBook</code> class,
-an instance of which is stored as one of the memory objects inside <code>ModelManager</code>. The main operations implemented by this class are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>StatefulAddressBook#saveAddressBookState()</code>&#8201;&#8212;&#8201;Adds an address book with the current state to the list <code>statefulAddressBookList</code>. Also
-clears states after the <code>currentStatePointer</code> and updates it by one.</p>
-</li>
-<li>
-<p><code>StatefulAddressBook#undo()</code>&#8201;&#8212;&#8201;Reverts the <code>currentStatePointer</code> to the previous one, and resets the address book to use the one pointed
-by <code>currentStatePointer</code>.</p>
-</li>
-<li>
-<p><code>StatefulAddressBook#redo()</code>&#8201;&#8212;&#8201;Increments the <code>currentStatePointer</code> to the future one, and resets the address book to use the one pointed
-by <code>currentStatePointer</code>.</p>
-</li>
-</ul>
+undoes/redoes the last data change made in the application. The feature is supported by the <code>StatefulAddressBook</code> class,
+an instance of which is stored as one of the memory objects inside <code>ModelManager</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -190,11 +173,6 @@ by <code>currentStatePointer</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo-redo mechanism works at each step. Let us assume that <code>StatefulAddressBook</code> has just been initialised.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
 </div>
 <div class="paragraph">
 <p>Step 1. The user makes some data changes. This adds a list of states to our <code>StatefulAddressBook</code>, and updates the
@@ -206,8 +184,7 @@ by <code>currentStatePointer</code>.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. User types <code>undo</code>. This invokes the <code>UndoCommand::execute</code> method, which further invokes the <code>StatefulAddressBook::undo</code>
-method. The <code>currentStatePointer</code> is decremented, and the address book is reset to the one being pointed to by
+<p>Step 2. User types <code>undo</code>. The <code>currentStatePointer</code> is decremented, and the address book is reset to the one being pointed to by
 <code>currentStatePointer</code>.</p>
 </div>
 <div class="imageblock">
@@ -225,16 +202,8 @@ and a new state is added.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3b. If a command which does not perform a data change is called, nothing happens in the <code>StatefulAddressBook</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoState3b.png" alt="UndoRedoState3b">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3c. If a <code>redo()</code> is called, then the <code>currentStatePointer</code> is incremented, and the address book is reset to the one
-being pointed to by <code>currentStatePointer</code>.</p>
+<p>Step 3b. If a command which does not perform a data change is called, <code>StatefulAddressBook</code> stays the same
+as seen in <code>Step 2</code>. If a <code>redo()</code> is called, then the <code>currentStatePointer</code> is incremented.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -246,8 +215,7 @@ being pointed to by <code>currentStatePointer</code>.</p>
 the resulting changes now reflected.</p>
 </div>
 <div class="paragraph">
-<p>Following is an activity diagram which shows the execution when the user makes in a data change or types in the <code>undo</code>
-command. The diagram for a <code>redo</code> command will be similar.</p>
+<p>Following is the activity diagram. The diagram for a <code>redo</code> command will be similar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -305,48 +273,6 @@ when we try to undo a command.</p>
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
-developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both
-HistoryManager and VersionedAddressBook.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use HistoryManager (a history of commands) for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands.
-Violates Single Responsibility Principle and Separation of Concerns as HistoryManager now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
 </div>
 </div>
 </div>
@@ -359,4 +285,4 @@ Violates Single Responsibility Principle and Separation of Concerns as HistoryMa
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 02:38:49 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 11:03:10 UTC</div></div></div></body></html>
