@@ -45,8 +45,11 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
-<li><a href="#displaying-indicators">F.4. Displaying indicators</a></li>
+<li><a href="#deleting-a-policy">F.3. Deleting a policy</a></li>
+<li><a href="#saving-data">F.4. Saving data</a></li>
+<li><a href="#displaying-indicators">F.5. Displaying indicators</a></li>
+<li><a href="#restore-deleted-items">F.6. Restore deleted items</a></li>
+<li><a href="#set-bin-item-expiry">F.7. Set Bin item expiry</a></li>
 </ul>
 </li>
 </ul>
@@ -1920,20 +1923,18 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>listpeople</code> command. Multiple persons in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-   Expected: First person is deleted from the list. Details of the deleted person shown in the status message.
-Timestamp
-in the status bar is updated.</p>
+Expected: First person is deleted from the list. Details of the deleted person shown in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No person is deleted. Error details shown in the status message.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect <code>delete</code> commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size)<br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -1946,7 +1947,41 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="deleting-a-policy"><a class="link" href="#deleting-a-policy">F.3. Deleting a policy</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a policy while all policies are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all policies using the <code>listpolicy</code> command. Multiple policies in the list.</p>
+</li>
+<li>
+<p>Test case: <code>deletepolicy 1</code><br>
+   Expected: First person is deleted from the list. Details of the deleted person shown in the status message. If
+policy is referenced by any person, the reference will be removed as well.</p>
+</li>
+<li>
+<p>Test case: <code>deletepolicy 0</code><br>
+Expected: No policy is deleted. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>deletepolicy</code> commands to try: <code>deletepolicy</code>, <code>deletepolicy x</code> (where x is larger than the list
+size)<br>
+   Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.4. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1966,7 +2001,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="displaying-indicators"><a class="link" href="#displaying-indicators">F.4. Displaying indicators</a></h3>
+<h3 id="displaying-indicators"><a class="link" href="#displaying-indicators">F.5. Displaying indicators</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1998,5 +2033,53 @@ Expected: Number of females should increase by 1. Format of indicator should be 
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="restore-deleted-items"><a class="link" href="#restore-deleted-items">F.6. Restore deleted items</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+</li>
+<li>
+<p>Test case:<br>
+    <code>restore 1</code><br>
+   Expected: First item is restored to the appropriate list. If the item is a person, it&#8217;ll show up on the person
+page. If it is a policy, it&#8217;ll show up on the policy page.</p>
+</li>
+<li>
+<p>Test case:<br>
+ <code>restore 0</code><br>
+Expected: No person is restored. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>restore</code> commands to try: <code>restore</code>, <code>restore x</code> (where x is larger than the list size)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 12:33:45 UTC</div></div></div></body></html>
+</div>
+<div class="sect2">
+<h3 id="set-bin-item-expiry"><a class="link" href="#set-bin-item-expiry">F.7. Set Bin item expiry</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case:<br>
+    <code>binitemexpiry days/10</code><br>
+   Expected: Status message will show that the user setting bin item expiry has changed to 10 days. If there are
+items in the bin currently, their expiry dates will be 10 days after their deletion dates.</p>
+</li>
+<li>
+<p>Test case:<br>
+ <code>binitemexpiry days/0</code><br>
+Expected: User setting is not changed. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect <code>binitemexpiry</code> commands to try: <code>binitemexpiry</code>, <code>binitemexpiry days/x</code> (where x is a non
+positive integer), <code>binitemexpiry day/30</code>, <code>binitemexpiry yrs/30</code><br>
+   Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-10 16:09:10 UTC</div></div></div></body></html>
