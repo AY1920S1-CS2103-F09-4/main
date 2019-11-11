@@ -47,12 +47,15 @@
 <li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
 <li><a href="#deleting-a-policy">F.3. Deleting a policy</a></li>
 <li><a href="#assigning-a-policy">F.4. Assigning a policy</a></li>
-<li><a href="#saving-data">F.5. Saving data</a></li>
-<li><a href="#displaying-indicators">F.6. Displaying indicators</a></li>
-<li><a href="#restore-deleted-items">F.7. Restore deleted items</a></li>
-<li><a href="#set-bin-item-expiry">F.8. Set Bin item expiry</a></li>
-<li><a href="#undo-redo-feature-2">F.9. Undo/Redo Feature</a></li>
-<li><a href="#history-feature">F.10. History Feature</a></li>
+<li><a href="#merging-a-duplicate-profile">F.5. Merging a duplicate profile</a></li>
+<li><a href="#getting-contact-details-for-invalid-nrics-phone-numbers-and-emails">F.6. Getting contact details for invalid NRICS, phone numbers and emails</a></li>
+<li><a href="#getting-suggestion-for-invalid-commands">F.7. Getting suggestion for invalid commands</a></li>
+<li><a href="#saving-data">F.8. Saving data</a></li>
+<li><a href="#displaying-indicators">F.9. Displaying indicators</a></li>
+<li><a href="#restore-deleted-items">F.10. Restore deleted items</a></li>
+<li><a href="#set-bin-item-expiry">F.11. Set Bin item expiry</a></li>
+<li><a href="#undo-redo-feature-2">F.12. Undo/Redo Feature</a></li>
+<li><a href="#history-feature">F.13. History Feature</a></li>
 </ul>
 </li>
 </ul>
@@ -433,7 +436,7 @@ If it is not the last merge, <code>MergeCommand#removeFirstDifferentField</code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/MergeActivityDiagram.png" alt="MergeActivityDiagram">
+<img src="images/MergeActivityDiagram.png" alt="MergeActivityDiagram" width="200">
 </div>
 </div>
 </div>
@@ -1945,9 +1948,6 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="deleting-a-policy"><a class="link" href="#deleting-a-policy">F.3. Deleting a policy</a></h3>
@@ -2021,7 +2021,203 @@ entering a policy already assigned/not present in the list of policies will rais
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.5. Saving data</a></h3>
+<h3 id="merging-a-duplicate-profile"><a class="link" href="#merging-a-duplicate-profile">F.5. Merging a duplicate profile</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Merging a duplicate profile.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The new profile being added has to have the same NRIC as a existing profile. The details of the new profile has to be valid.</p>
+</li>
+<li>
+<p>Test case: No Different Fields between input profile and original profile</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Command to add a person to the list: <code>add n/Johnathan Po ic/T6543210A p/98765432 a/Tampines Street 12 e/johnathanpo@gmail.com dob/18.8.1886 g/Male</code></p>
+</li>
+<li>
+<p>Command to create the duplicate profile with no different field: <code>add n/Johnathan Po ic/T6543210A p/98765432 a/Tampines Street 12 e/johnathanpo@gmail.com dob/18.8.1886 g/Male</code><br>
+Expected: An error message will be shown, telling the user that the profile already exists.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Rejecting a merge</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Command to add a person to the list: <code>add n/Amber Tan ic/T0123456A p/91234567 a/Ang Mo Kio Ave 6 e/amber@gmail.com dob/3.2.1990 g/Female</code></p>
+</li>
+<li>
+<p>Command to create the duplicate profile: <code>add n/Amber Tan ic/T0123456A p/97654321 a/Ang Mo Kio Ave 6 e/ambertan@gmail.com dob/3.2.1990 g/Female</code><br>
+Expected: Details of the original person in the list and the input person are shown, followed by a prompt to edit the phone number of the profile.</p>
+</li>
+<li>
+<p>Type <code>no</code><br>
+Expected: Message that the profile is not updated will be displayed, followed by the details of the original person.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: 2 Different Fields between input profile and original profile</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Command to add a person to the list (skip if person has already been added previously): <code>add n/Amber Tan ic/T0123456A p/91234567 a/Ang Mo Kio Ave 6 e/amber@gmail.com dob/3.2.1990 g/Female</code></p>
+</li>
+<li>
+<p>Command to create the duplicate profile: <code>add n/Amber Tan ic/T0123456A p/97654321 a/Ang Mo Kio Ave 6 e/ambertan@gmail.com dob/3.2.1990 g/Female</code><br>
+Expected: Details of the original person in the list and the input person are shown, followed by a prompt to edit the profile.</p>
+</li>
+<li>
+<p>Press enter or type <code>yes</code><br>
+Expected: A prompt to edit the phone number of the profile will be shown.</p>
+</li>
+<li>
+<p>Press enter or type <code>yes</code><br>
+Expected: Phone number will be updated and a success message for updating the phone number will be shown, followed by a prompt to edit the email address of the person.</p>
+</li>
+<li>
+<p>Type `no'<br>
+Expected: Email address will <strong>not</strong> be updated and a success message for updating the profile will be shown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Stopping a merge midway</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Command to add a person to the list: <code>add n/Andrea Chan ic/T9876543A p/92345678 a/Jurong Street 6 Blk 20 #03-88 e/andrea@yahoo.com dob/20.12.2000 g/Female</code></p>
+</li>
+<li>
+<p>Command to create the duplicate profile: <code>add n/Bernice Chan ic/T9876543A p/92345678 a/Orchard Road e/andrea@yahoo.com dob/20.12.2000 g/Female</code><br>
+Expected: Details of the original person in the list and the input person are shown, followed by a prompt to edit the profile.</p>
+</li>
+<li>
+<p>Press enter or type <code>yes</code><br>
+Expected: A prompt to update the name of the person will be shown.</p>
+</li>
+<li>
+<p>Press enter or type <code>yes</code><br>
+Expected: Name will be updated and a success message for updating the name will be shown, followed by a prompt to edit the address of the person.</p>
+</li>
+<li>
+<p>Type <code>stop</code>
+Expected: Message that the merge has been stopped will be shown, followed by the updated details of the person.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Invalid commands</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Command to add a person to the list (skip if person has already been added previously): <code>add n/Johnathan Po ic/T6543210A p/98765432 a/Tampines Street 12 e/johnathanpo@gmail.com dob/18.8.1886 g/Male</code></p>
+</li>
+<li>
+<p>Command to invoke merge: <code>add n/John Po ic/T6543210A p/98765432 a/Tampines Street 12 e/johnathanpo@gmail.com dob/18.8.1886 g/Male</code><br>
+Expected: Details of the original person in the list and the input person are shown, followed by a prompt to edit the profile.</p>
+</li>
+<li>
+<p>Press enter or type <code>yes</code><br>
+Expected: A prompt to update the name of the person will be shown.</p>
+</li>
+<li>
+<p>Type any other command word or random word e.g. <code>listpeople</code>, <code>history</code><br>
+Expected: Error message that the command is not recognised will be shown and the prompt will be shown again.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-contact-details-for-invalid-nrics-phone-numbers-and-emails"><a class="link" href="#getting-contact-details-for-invalid-nrics-phone-numbers-and-emails">F.6. Getting contact details for invalid NRICS, phone numbers and emails</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding invalid contact details or NRICS</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: Invalid NRIC and valid phone and email</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>add n/Ivan Ang ic/T7134A p/91827364 a/Tampines Street 12 e/ivan@gmail.com dob/18.8.1886 g/Male</code><br>
+Expected: Error message indicating an invalid NRIC and returns the phone number and email address of the person. The person is not added.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Invalid phone and valid NRIC and email</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>add n/Ivan Ang ic/S9182734B p/9182 a/Tampines Street 12 e/ivan@gmail.com dob/18.8.1886 g/Male</code><br>
+Expected: Error message indicating an invalid phone number and returns the email address of the person. The person will not be added.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Other invalid commands: any combination of invalid details (NRIC, phone number and email)<br>
+Expected: similar to above. If none are valid, no contact details will be returned.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="getting-suggestion-for-invalid-commands"><a class="link" href="#getting-suggestion-for-invalid-commands">F.7. Getting suggestion for invalid commands</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Suggestions for invalid command words</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Suggestions are turned on (can be turned on by entering <code>suggestion ON/</code>)</p>
+</li>
+<li>
+<p>Test case: Invalid NRIC and valid phone and email</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>dlete 2</code><br>
+Expected: Message to indicate an invalid command word and automatically updates the command word to a suggested one.<br>
+In this case, <code>delete 2</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Other commands to try: <code>adpoicy n/Health Insurance d/Insurance for healthcare. This policy has been available since 2012. c/years/13 pr/$60000 sa/18 ea/75</code>,
+<code>lstpol</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.8. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2041,7 +2237,7 @@ entering a policy already assigned/not present in the list of policies will rais
 </div>
 </div>
 <div class="sect2">
-<h3 id="displaying-indicators"><a class="link" href="#displaying-indicators">F.6. Displaying indicators</a></h3>
+<h3 id="displaying-indicators"><a class="link" href="#displaying-indicators">F.9. Displaying indicators</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2057,14 +2253,14 @@ Expected: Popularity of child care policy should be 0. Format of indicator shoul
 <li>
 <p>Test case:<br>
     <code>display i/age-group-breakdown f/linechart</code><br>
-    <code>add n/Norman ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Male</code><br>
+    <code>add n/Norman ic/S0000001A p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Male</code><br>
    Expected: Number of people in the age group below 20 years old should increase by 1.
 Format of indicator should be linechart.</p>
 </li>
 <li>
 <p>Test case:<br>
  <code>display i/gender-breakdown f/barchart</code><br>
- <code>add n/Sally ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Female</code><br>
+ <code>add n/Sally ic/S0000002A p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.2000 g/Female</code><br>
 Expected: Number of females should increase by 1. Format of indicator should be barchart.</p>
 </li>
 </ol>
@@ -2074,7 +2270,7 @@ Expected: Number of females should increase by 1. Format of indicator should be 
 </div>
 </div>
 <div class="sect2">
-<h3 id="restore-deleted-items"><a class="link" href="#restore-deleted-items">F.7. Restore deleted items</a></h3>
+<h3 id="restore-deleted-items"><a class="link" href="#restore-deleted-items">F.10. Restore deleted items</a></h3>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2099,7 +2295,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-bin-item-expiry"><a class="link" href="#set-bin-item-expiry">F.8. Set Bin item expiry</a></h3>
+<h3 id="set-bin-item-expiry"><a class="link" href="#set-bin-item-expiry">F.11. Set Bin item expiry</a></h3>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2122,7 +2318,7 @@ positive integer), <code>binitemexpiry day/30</code>, <code>binitemexpiry yrs/30
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature-2"><a class="link" href="#undo-redo-feature-2">F.9. Undo/Redo Feature</a></h3>
+<h3 id="undo-redo-feature-2"><a class="link" href="#undo-redo-feature-2">F.12. Undo/Redo Feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2170,7 +2366,7 @@ Expected: No change in address book performed. App shows an error message in the
 </div>
 </div>
 <div class="sect2">
-<h3 id="history-feature"><a class="link" href="#history-feature">F.10. History Feature</a></h3>
+<h3 id="history-feature"><a class="link" href="#history-feature">F.13. History Feature</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2224,4 +2420,4 @@ While entering commands, you can also navigate to previous commands using the up
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:00:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:18:59 UTC</div></div></div></body></html>

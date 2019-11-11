@@ -31,11 +31,39 @@ The user interacts with it using a CLI and has a GUI created with JavaFX. It is 
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows merging of duplicate profiles and policies and also gives suggestions for incorrectly entered command words.</p>
+<p>What it does:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows merging of duplicate profiles and policies</p>
 </li>
 <li>
-<p>Justification: this feature improves the product significantly because a user can make mistakes in commands and the app provides a convenient way to rectify them.
-Specifically, information does not have be re-entered after discovering a duplicate profile/policy. Additionally, typos can be corrected quickly through command suggestions.</p>
+<p>Gives suggestions for incorrectly entered command words.</p>
+</li>
+<li>
+<p>Checks for valid NRICs, phone numbers and email address and returns any valid contact details</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Justification:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Merging: improves the product significantly because a user can add new profiles/policies without needing to check for duplicates.
+Specifically, the user does not have re-enter the data that has already been keyed in and also does not have to compare the different fields between the original profile/policy and the new profile/policy
+and craft another edit command to update the profile/policy from scratch.</p>
+</li>
+<li>
+<p>Command suggestions: makes it easier and faster to rectify typing errors. The program automatically updates the incorrect command word with a suggested valid command word
+without requiring users to do so on their own, which would make it more convenient especially for those who do not remember the correct command word.</p>
+</li>
+<li>
+<p>Information verification: helps the user obtain the contact details of the person with invalid details quickly so that he/she can contact the person to verify the information</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Highlights: this enhancement affects existing commands and commands to be added in the future. The list of command words and prefixes has to be updated when new commands are added for the suggestion of commands.
@@ -48,27 +76,40 @@ Moreover, the information used to create a duplicate profile/policy has to be st
 <p><strong>Minor enhancement</strong>: added a command to turn suggestions on and off.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=chowyiyin&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=chowyiyin&amp;tabRepo=AY1920S1-CS2103-F09-4%2Fmain%5Bmaster%5D">function and test code</a></p>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=chowyiyin&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=chowyiyin&amp;tabRepo=AY1920S1-CS2103-F09-4%2Fmain%5Bmaster%5D">function and test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Project management</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of testing and scheduling</p>
+</li>
+<li>
+<p>Set milestones and deadlines for the team</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Added right panel to GUI (Pull requests <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/109">#109</a>)</p>
+<p>Added right panel to GUI (Pull requests [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/109">#109</a>])</p>
 </li>
 <li>
-<p>Added classes for Policy and for new Person Fields (Pull requests <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a>)</p>
+<p>Added classes for Policy and for new Person Fields (Pull requests [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a>])</p>
 </li>
 <li>
-<p>Implemented command to add policy and wrote tests for the command (Pull requests <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a>, <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/93">#93</a>)</p>
+<p>Implemented command to add policy and wrote tests for the command (Pull requests [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a>], [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/93">#93</a>])</p>
 </li>
 <li>
-<p>Implemented command to expand profiles and policies onto right panel (Pull requests <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/109">#109</a>)</p>
+<p>Implemented command to expand profiles and policies onto right panel (Pull requests [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/109">#109</a>])</p>
 </li>
 </ul>
 </div>
@@ -78,7 +119,7 @@ Moreover, the information used to create a duplicate profile/policy has to be st
 <div class="ulist">
 <ul>
 <li>
-<p>Added the new basic commands to User Guide: <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a></p>
+<p>Added the new basic commands to User Guide: [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/75">#75</a>]</p>
 </li>
 </ul>
 </div>
@@ -88,7 +129,7 @@ Moreover, the information used to create a duplicate profile/policy has to be st
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/95">#95</a>, <a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/70">#70</a></p>
+<p>PRs reviewed (with non-trivial review comments): [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/95">#95</a>], [<a href="https://github.com/AY1920S1-CS2103-F09-4/main/pull/70">#70</a>]</p>
 </li>
 </ul>
 </div>
@@ -258,7 +299,8 @@ For each different attribute, there will be a prompt to suggest a change from th
 <p>Examples:</p>
 </div>
 <div class="paragraph">
-<p><code>add n/John Doe ic/S9999999J p/91234567 e/johndoe@example.com a/John street, block 123, #01-01 dob/12.12.1992 g/Male</code></p>
+<p><code>add n/John Doe ic/S9999999J p/98765432 e/johndoe@example.com a/John street, block 123, #01-01 dob/12.12.1992 g/Male</code>
+<code>add n/John Doe ic/S9999999J p/91234567 e/johndoe@example.com a/John street, block 123, #01-01 dob/12.12.1992 g/Male</code></p>
 </div>
 <div class="paragraph">
 <p>Expected Output:</p>
@@ -272,7 +314,7 @@ Policies: [Health Insurance][Fire Insurance]
 Tags: [diabetic][high blood pressure]
 Your input:
 John Doe
-NRIC: S0000001J; Phone: 91234567; Email: johndoe@example.com; Address: John street, block 123, #01-01; Date of Birth: 12 December 1992; Gender: Male
+NRIC: S9999999J; Phone: 91234567; Email: johndoe@example.com; Address: John street, block 123, #01-01; Date of Birth: 12 December 1992; Gender: Male
 Do you wish to edit this person's profile?
 Please press enter or 'yes' to proceed or 'no' to skip.</code></pre>
 </div>
@@ -395,7 +437,7 @@ If it is not the last merge, <code>MergeCommand#removeFirstDifferentField</code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/MergeActivityDiagram.png" alt="MergeActivityDiagram">
+<img src="../images/MergeActivityDiagram.png" alt="MergeActivityDiagram" width="200">
 </div>
 </div>
 </div>
@@ -498,13 +540,4 @@ If it is not the last merge, <code>MergeCommand#removeFirstDifferentField</code>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
-<div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 10:00:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 12:18:59 UTC</div></div></div></body></html>
