@@ -56,6 +56,7 @@
 <li><a href="#set-bin-item-expiry">F.11. Set Bin item expiry</a></li>
 <li><a href="#undo-redo-feature-2">F.12. Undo/Redo Feature</a></li>
 <li><a href="#history-feature">F.13. History Feature</a></li>
+<li><a href="#eligibility">F.14. Eligibility</a></li>
 </ul>
 </li>
 </ul>
@@ -2419,5 +2420,44 @@ While entering commands, you can also navigate to previous commands using the up
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="eligibility"><a class="link" href="#eligibility">F.14. Eligibility</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>People who are eligible for policies show up during <code>eligiblepeople</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case:<br>
+<code>add n/John Doe ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.1982 g/Male</code><br>
+<code>addtag [INDEX OF PERSON JUST ADDED] t/test</code><br>
+<code>addpolicy n/Motor Care d/Insurance for cars c/months/10 pr/$50000 sa/18 ea/100</code><br>
+<code>addcriteria [INDEX OF POLICY JUST ADDED] cr/test
+`eligiblepeople [INDEX OF POLICY JUST ADDED]</code><br>
+Expected: Person just added should show up on the list that appears during the run of <code>eligiblepeople</code></p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:11:22 UTC</div></div></div></body></html>
+</li>
+<li>
+<p>Policies that are eligible for people show up during <code>eligiblepolicies</code></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case:<br>
+<code>add n/John Doe ic/S0000001J p/98765432 e/johnd@example.com a/311, Clementi Ave 2, #02-25 dob/12.12.1982 g/Male</code><br>
+<code>addtag [INDEX OF PERSON JUST ADDED] t/test</code><br>
+<code>addpolicy n/Motor Care d/Insurance for cars c/months/10 pr/$50000 sa/18 ea/100</code><br>
+<code>addcriteria [INDEX OF POLICY JUST ADDED] cr/test
+`eligiblepolicies [INDEX OF PERSON JUST ADDED]</code><br>
+Expected: Policy just added should show up on the list that appears during the run of <code>eligiblepolicies</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-11 13:20:17 UTC</div></div></div></body></html>
